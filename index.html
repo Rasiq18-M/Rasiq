@@ -1,0 +1,1918 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rasiq Mushtaq Wani | Verified Civil BIM Engineer</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicon/devicon@v2.15.1/devicon.min.css">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700;800&family=Great+Vibes&display=swap" rel="stylesheet">
+    
+    <!-- JSZip & FileSaver for Media ZIP Backups -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+    
+    <!-- PDF.js for Automated Client-Side PDF Data Extraction -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <script>
+        pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+    </script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { brand: { dark: '#0b1120', primary: '#0284c7' } },
+                    fontFamily: { sans: ['Inter', 'sans-serif'], display: ['Outfit', 'sans-serif'], signature: ['Great Vibes', 'cursive'] }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #0b1120; color: #f1f5f9; font-family: 'Inter', sans-serif; margin: 0; overflow-x: hidden; }
+
+        /* Crisp Background Layers - NO BLUR */
+        .bg-layer-image { position: fixed; inset: 0; z-index: -30; background: url('kashmir-bg.jpg') center/cover no-repeat; background-color: #0b1120; }
+        .bg-layer-video { position: fixed; inset: 0; z-index: -20; width: 100%; height: 100%; object-fit: cover; opacity: 0.88; }
+        .bg-layer-overlay { position: fixed; inset: 0; z-index: -10; background: linear-gradient(rgba(11, 17, 32, 0.3), rgba(11, 17, 32, 0.75)); }
+
+        /* Apple Glassmorphism Card (58% opacity for vivid background visibility) */
+        .glass-card { 
+            background: rgba(15, 23, 42, 0.58); 
+            backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); 
+            border: 1px solid rgba(255, 255, 255, 0.12); 
+            box-shadow: 0 10px 40px 0 rgba(0, 0, 0, 0.5); 
+            transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease; 
+        }
+        .glass-card:hover {
+            transform: translateY(-3px) scale(1.005);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7), 0 0 25px rgba(56, 189, 248, 0.2);
+            border-color: rgba(56, 189, 248, 0.4);
+        }
+        .blueprint-bg { background-color: rgba(10, 37, 64, 0.82); background-image: linear-gradient(rgba(0, 150, 255, 0.15) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 150, 255, 0.15) 1px, transparent 1px); background-size: 20px 20px; }
+
+        /* Navigation Buttons & Tactile Feedback */
+        button, .tab-btn { transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1); }
+        button:active, .tab-btn:active { transform: scale(0.96) !important; }
+
+        .tab-btn.active { background-color: rgba(2, 132, 199, 0.9) !important; color: #ffffff !important; border-left: 4px solid #38bdf8; box-shadow: inset 0 0 20px rgba(0,0,0,0.3); }
+        .nav-category { opacity: 0; transition: opacity 0.3s; }
+        .group:hover .nav-category { opacity: 1; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        .text-glow { text-shadow: 0 2px 6px rgba(0, 0, 0, 0.9); }
+        
+        ul.list-disc li { margin-bottom: 0.35rem; line-height: 1.5; }
+
+        /* APPLE MACBOOK WINDOW ANIMATIONS */
+        @keyframes macWindowIn {
+            0% { opacity: 0; transform: scale(0.96) translateY(12px); filter: blur(6px); }
+            100% { opacity: 1; transform: scale(1) translateY(0); filter: blur(0px); }
+        }
+
+        .mac-window-animate { animation: macWindowIn 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+
+        @keyframes macModalIn {
+            0% { opacity: 0; transform: scale(0.92) translateY(20px); filter: blur(10px); }
+            100% { opacity: 1; transform: scale(1) translateY(0); filter: blur(0px); }
+        }
+
+        .mac-modal-animate { animation: macModalIn 0.38s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+
+        /* macOS Window Control Dots */
+        .mac-dots { display: flex; align-items: center; gap: 6px; }
+        .mac-dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+        .mac-dot-close { background-color: #ff5f56; border: 1px solid #e0443e; }
+        .mac-dot-minimize { background-color: #ffbd2e; border: 1px solid #dea123; }
+        .mac-dot-expand { background-color: #27c93f; border: 1px solid #1aab29; }
+
+        /* Orbiting Skills Animation */
+        @keyframes spin { 100% { transform: rotate(360deg); } }
+        @keyframes reverse-spin { 100% { transform: rotate(-360deg); } }
+        .orbit-container { position: absolute; width: 100%; height: 100%; animation: spin 35s linear infinite; pointer-events: none; }
+        .orbit-item { position: absolute; top: 50%; left: 50%; margin: -35px; width: 70px; height: 70px; }
+        .orbit-icon { width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; animation: reverse-spin 35s linear infinite; }
+        
+        .item-1 { transform: rotate(0deg) translateX(160px); }
+        .item-2 { transform: rotate(60deg) translateX(160px); }
+        .item-3 { transform: rotate(120deg) translateX(160px); }
+        .item-4 { transform: rotate(180deg) translateX(160px); }
+        .item-5 { transform: rotate(240deg) translateX(160px); }
+        .item-6 { transform: rotate(300deg) translateX(160px); }
+
+        .quote-fade { animation: fadeInOut 10s infinite; }
+        @keyframes fadeInOut { 0% { opacity: 0; transform: translateY(10px); } 10% { opacity: 1; transform: translateY(0); } 90% { opacity: 1; transform: translateY(0); } 100% { opacity: 0; transform: translateY(-10px); } }
+
+        /* Excel Table Styling */
+        .excel-table th { background-color: #0f172a; border: 1px solid #334155; padding: 8px 12px; text-align: left; }
+        .excel-table td { border: 1px solid #334155; padding: 8px 12px; }
+
+        /* Print Mode */
+        @media print {
+            body { background: #fff !important; color: #000 !important; }
+            .no-print, .bg-layer-image, .bg-layer-video, .bg-layer-overlay { display: none !important; }
+            .glass-card { background: #fff !important; border: 1px solid #ccc !important; box-shadow: none !important; backdrop-filter: none !important; }
+            .tab-content { display: block !important; page-break-after: always; }
+            #main-wrapper { margin-left: 0 !important; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- CRYSTAL CLEAR BACKGROUND ENGINE -->
+    <div class="bg-layer-image"></div>
+    <video id="bg-video-element" class="bg-layer-video pointer-events-none hidden" autoplay loop muted playsinline>
+        <source id="bg-video-source" src="video-summer.mp4" type="video/mp4">
+    </video>
+    <div class="bg-layer-overlay"></div>
+
+    <!-- TOAST NOTIFICATION SYSTEM -->
+    <div id="toast-container" class="fixed bottom-6 right-6 z-[100] bg-emerald-600 text-white px-6 py-4 rounded-xl shadow-[0_10px_40px_rgba(16,185,129,0.8)] font-bold flex items-center gap-3 transform translate-y-24 opacity-0 transition-all duration-400 pointer-events-none border border-emerald-400">
+        <i class="fa-solid fa-circle-check text-2xl drop-shadow-md"></i> <span id="toast-msg" class="text-sm">Success!</span>
+    </div>
+
+    <!-- MOBILE OVERLAY BACKDROP -->
+    <div id="mobile-overlay" onclick="toggleMobileMenu()" class="fixed inset-0 bg-black/60 z-40 hidden sm:hidden backdrop-blur-sm transition-opacity"></div>
+
+    <!-- LEFT SIDEBAR -->
+    <aside id="sidebar-nav" class="peer fixed left-0 top-0 bottom-0 z-50 w-64 sm:w-20 sm:hover:w-64 -translate-x-full sm:translate-x-0 transition-all duration-300 ease-in-out bg-slate-900/95 sm:bg-slate-900/90 border-r border-slate-700/50 flex flex-col py-4 shadow-2xl backdrop-blur-xl no-print group overflow-y-auto no-scrollbar">
+        <div class="flex items-center gap-3 px-3.5 pb-2 border-b border-slate-700/50 mb-2">
+            <button onclick="toggleMobileMenu()" class="sm:hidden text-white mr-2"><i class="fa-solid fa-xmark text-xl"></i></button>
+            <i class="fa-solid fa-cubes text-sky-400 text-2xl min-w-[28px] sm:min-w-[36px] text-center drop-shadow-md"></i>
+            <div class="opacity-100 sm:opacity-0 group-hover:opacity-100 transition-opacity duration-300 overflow-hidden">
+                <span class="font-bold text-white text-sm font-display block text-glow whitespace-nowrap">RASIQ WANI</span>
+                <span class="text-[10px] text-emerald-400 font-bold text-glow whitespace-nowrap">Verified Engineer <i class="fa-solid fa-check-circle"></i></span>
+            </div>
+        </div>
+
+        <div class="flex flex-col space-y-0.5 px-2 flex-grow">
+            <div class="nav-category opacity-100 sm:opacity-0 text-[10px] font-bold text-slate-500 uppercase tracking-widest px-3 mt-3 mb-1 whitespace-nowrap">Main</div>
+            <button onclick="openTab('home')" id="tab-home" class="tab-btn active flex items-center gap-3.5 px-3 py-2.5 rounded-xl text-xs font-medium text-slate-200 hover:bg-slate-800/80 transition w-full text-left">
+                <i class="fa-solid fa-house text-base min-w-[24px] sm:min-w-[32px] text-center text-sky-400 drop-shadow-md"></i><span class="opacity-100 sm:opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap text-glow">Home / Profile</span>
+            </button>
+            <button onclick="openTab('whatsapp')" id="tab-whatsapp" class="tab-btn flex items-center gap-3.5 px-3 py-2.5 rounded-xl text-xs font-medium text-slate-200 hover:bg-slate-800/80 transition w-full text-left">
+                <i class="fa-brands fa-whatsapp text-lg min-w-[24px] sm:min-w-[32px] text-center text-emerald-400 drop-shadow-md"></i><span class="opacity-100 sm:opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap text-glow">Contact Me</span>
+            </button>
+
+            <div class="nav-category opacity-100 sm:opacity-0 text-[10px] font-bold text-slate-500 uppercase tracking-widest px-3 mt-4 mb-1 whitespace-nowrap">Profile</div>
+            <button onclick="openTab('summary')" id="tab-summary" class="tab-btn flex items-center gap-3.5 px-3 py-2.5 rounded-xl text-xs font-medium text-slate-200 hover:bg-slate-800/80 transition w-full text-left">
+                <i class="fa-solid fa-user-gear text-base min-w-[24px] sm:min-w-[32px] text-center text-blue-400 drop-shadow-md"></i><span class="opacity-100 sm:opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap text-glow">Overview & Summary</span>
+            </button>
+            <button onclick="openTab('experience')" id="tab-experience" class="tab-btn flex items-center gap-3.5 px-3 py-2.5 rounded-xl text-xs font-medium text-slate-200 hover:bg-slate-800/80 transition w-full text-left">
+                <i class="fa-solid fa-briefcase text-base min-w-[24px] sm:min-w-[32px] text-center text-amber-500 drop-shadow-md"></i><span class="opacity-100 sm:opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap text-glow">Detailed Experience</span>
+            </button>
+            <button onclick="openTab('software')" id="tab-software" class="tab-btn flex items-center gap-3.5 px-3 py-2.5 rounded-xl text-xs font-medium text-slate-200 hover:bg-slate-800/80 transition w-full text-left">
+                <i class="fa-solid fa-laptop-code text-base min-w-[24px] sm:min-w-[32px] text-center text-fuchsia-400 drop-shadow-md"></i><span class="opacity-100 sm:opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap text-glow">Software Suite & Skills</span>
+            </button>
+
+            <div class="nav-category opacity-100 sm:opacity-0 text-[10px] font-bold text-slate-500 uppercase tracking-widest px-3 mt-4 mb-1 whitespace-nowrap">Engineering Portfolio</div>
+            <button onclick="openTab('arch')" id="tab-arch" class="tab-btn flex items-center gap-3.5 px-3 py-2.5 rounded-xl text-xs font-medium text-slate-200 hover:bg-slate-800/80 transition w-full text-left">
+                <i class="fa-solid fa-building-user text-base min-w-[24px] sm:min-w-[32px] text-center text-indigo-400 drop-shadow-md"></i><span class="opacity-100 sm:opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap text-glow">Architectural BIM</span>
+            </button>
+            <button onclick="openTab('struct')" id="tab-struct" class="tab-btn flex items-center gap-3.5 px-3 py-2.5 rounded-xl text-xs font-medium text-slate-200 hover:bg-slate-800/80 transition w-full text-left">
+                <i class="fa-solid fa-cubes-stacked text-base min-w-[24px] sm:min-w-[32px] text-center text-purple-400 drop-shadow-md"></i><span class="opacity-100 sm:opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap text-glow">Structural BIM & FEA</span>
+            </button>
+            <button onclick="openTab('projects')" id="tab-projects" class="tab-btn flex items-center gap-3.5 px-3 py-2.5 rounded-xl text-xs font-medium text-slate-200 hover:bg-slate-800/80 transition w-full text-left">
+                <i class="fa-solid fa-city text-base min-w-[24px] sm:min-w-[32px] text-center text-cyan-400 drop-shadow-md"></i><span class="opacity-100 sm:opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap text-glow">Key Projects</span>
+            </button>
+            <button onclick="openTab('videos')" id="tab-videos" class="tab-btn flex items-center gap-3.5 px-3 py-2.5 rounded-xl text-xs font-medium text-slate-200 hover:bg-slate-800/80 transition w-full text-left">
+                <i class="fa-solid fa-video text-base min-w-[24px] sm:min-w-[32px] text-center text-rose-400 drop-shadow-md"></i><span class="opacity-100 sm:opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap text-glow">Project Videos</span>
+            </button>
+
+            <div class="nav-category opacity-100 sm:opacity-0 text-[10px] font-bold text-slate-500 uppercase tracking-widest px-3 mt-4 mb-1 whitespace-nowrap">Official Documents</div>
+            <button onclick="openTab('cvs')" id="tab-cvs" class="tab-btn flex items-center gap-3.5 px-3 py-2.5 rounded-xl text-xs font-medium text-slate-200 hover:bg-slate-800/80 transition w-full text-left">
+                <i class="fa-solid fa-file-invoice text-base min-w-[24px] sm:min-w-[32px] text-center text-teal-400 drop-shadow-md"></i><span class="opacity-100 sm:opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap text-glow">CV / Resume</span>
+            </button>
+            <button onclick="openTab('degrees')" id="tab-degrees" class="tab-btn flex items-center gap-3.5 px-3 py-2.5 rounded-xl text-xs font-medium text-slate-200 hover:bg-slate-800/80 transition w-full text-left">
+                <i class="fa-solid fa-user-graduate text-base min-w-[24px] sm:min-w-[32px] text-center text-pink-400 drop-shadow-md"></i><span class="opacity-100 sm:opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap text-glow">Degrees & Academics</span>
+            </button>
+            <button onclick="openTab('certificates')" id="tab-certificates" class="tab-btn flex items-center gap-3.5 px-3 py-2.5 rounded-xl text-xs font-medium text-slate-200 hover:bg-slate-800/80 transition w-full text-left">
+                <i class="fa-solid fa-certificate text-base min-w-[24px] sm:min-w-[32px] text-center text-emerald-400 drop-shadow-md"></i><span class="opacity-100 sm:opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap text-glow">Certificates</span>
+            </button>
+            <button onclick="openTab('workpdfs')" id="tab-workpdfs" class="tab-btn flex items-center gap-3.5 px-3 py-2.5 rounded-xl text-xs font-medium text-slate-200 hover:bg-slate-800/80 transition w-full text-left">
+                <i class="fa-solid fa-folder-tree text-base min-w-[24px] sm:min-w-[32px] text-center text-amber-400 drop-shadow-md"></i><span class="opacity-100 sm:opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap text-glow">Work PDFs</span>
+            </button>
+            <button onclick="openTab('docs')" id="tab-docs" class="tab-btn flex items-center gap-3.5 px-3 py-2.5 rounded-xl text-xs font-medium text-slate-200 hover:bg-slate-800/80 transition w-full text-left">
+                <i class="fa-solid fa-book-open-reader text-base min-w-[24px] sm:min-w-[32px] text-center text-orange-400 drop-shadow-md"></i><span class="opacity-100 sm:opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap text-glow">Documentation</span>
+            </button>
+        </div>
+    </aside>
+
+    <!-- PUSH CONTENT WRAPPER -->
+    <div id="main-wrapper" class="flex flex-col min-h-screen ml-16 sm:ml-20 peer-hover:ml-64 transition-all duration-300 ease-in-out">
+        
+        <!-- TOP BAR: CLOCK & SEASON SELECTOR -->
+        <div class="bg-slate-950/80 backdrop-blur-xl border-b border-slate-700/50 py-2 px-4 sm:px-8 flex items-center justify-between text-xs z-30">
+            <div class="flex items-center gap-4 text-glow">
+                <button onclick="toggleMobileMenu()" class="sm:hidden text-white hover:text-sky-400 text-lg mr-2"><i class="fa-solid fa-bars"></i></button>
+                <div class="flex items-center gap-2">
+                    <div class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></div>
+                    <span id="live-clock" class="font-mono font-bold tracking-wide text-white hidden sm:inline-block">Loading Time...</span>
+                    <span id="live-clock-mobile" class="font-mono font-bold tracking-wide text-white sm:hidden">Time...</span>
+                </div>
+                <div class="hidden md:block border-l border-slate-600 h-3"></div>
+                <div id="special-day-container" class="font-medium text-amber-400 hidden animate-pulse">
+                    <i class="fa-solid fa-star"></i> <span id="special-day-text" class="hidden sm:inline">Have a blessed day!</span>
+                </div>
+            </div>
+            
+            <div class="flex items-center gap-3 text-glow">
+                <a href="https://www.google.com/maps/search/?api=1&query=Kashmir,+India+192123" target="_blank" class="hidden sm:flex hover:text-sky-300 transition items-center gap-1">
+                    <i class="fa-solid fa-location-crosshairs text-sky-400"></i> Kashmir, J&K, India
+                </a>
+                <div class="hidden sm:block border-l border-slate-600 h-3"></div>
+                <div class="flex items-center gap-1.5">
+                    <span class="text-[10px] uppercase font-bold text-sky-300 hidden sm:inline">Theme:</span>
+                    <select id="season-selector" onchange="forceSeason(this.value)" class="bg-slate-900 text-white border border-slate-600 rounded px-2 py-1 text-[10px] font-bold uppercase outline-none cursor-pointer">
+                        <option value="auto">Live Season (Auto)</option>
+                        <option value="video-spring.mp4">Spring</option>
+                        <option value="video-summer.mp4">Summer</option>
+                        <option value="video-autumn.mp4">Autumn</option>
+                        <option value="video-winter.mp4">Winter</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <!-- MAIN HEADER -->
+        <header class="bg-slate-900/60 sticky top-0 z-20 backdrop-blur-md shadow-lg border-b border-slate-700/50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+                <div class="flex flex-col lg:flex-row items-center justify-between gap-4">
+                    <div class="flex flex-col sm:flex-row items-center gap-5 text-center sm:text-left">
+                        <div class="relative cursor-pointer shrink-0" onclick="openImageLightbox('RMW.png', 'RASIQ MUSHTAQ WANI')">
+                            <img src="RMW.png" class="w-20 h-20 sm:w-24 sm:h-24 rounded-full object-cover border-2 border-sky-400 shadow-[0_0_15px_rgba(56,189,248,0.5)] hover:scale-105 transition" onError="this.src='https://via.placeholder.com/150'">
+                        </div>
+                        <div>
+                            <h1 class="text-2xl sm:text-3xl font-extrabold font-display tracking-tight text-white flex flex-wrap items-center justify-center sm:justify-start gap-2 text-glow">
+                                RASIQ MUSHTAQ WANI
+                                <span onclick="openAdminLogin()" class="cursor-pointer text-[10px] sm:text-xs font-normal px-2 py-0.5 rounded-full bg-emerald-900/80 hover:bg-emerald-800 text-emerald-400 border border-emerald-500/50 shadow-sm text-shadow-none whitespace-nowrap transition">Verified Engineer <i class="fa-solid fa-circle-check"></i></span>
+                            </h1>
+                            <p class="text-sky-300 font-medium text-xs sm:text-sm text-glow mt-1">CIVIL BIM ENGINEER | STRUCTURAL & ARCHITECTURAL BIM SPECIALIST</p>
+                            <p class="text-[10px] sm:text-xs text-slate-200 mt-1.5 flex flex-wrap items-center justify-center sm:justify-start gap-2 text-glow">
+                                <span class="text-emerald-400 font-bold flex items-center gap-1 drop-shadow-md">
+                                    <i class="fa-solid fa-plane-departure"></i> READY FOR IMMEDIATE RELOCATION: UAE/GCC & Worldwide
+                                </span>
+                            </p>
+                            
+                            <!-- CLICKABLE CONTACT DETAILS -->
+                            <div class="text-[10px] sm:text-[11px] text-slate-300 mt-2 flex flex-wrap items-center justify-center sm:justify-start gap-3 text-glow">
+                                <a href="mailto:Rasiq.mwani@gmail.com" class="hover:text-sky-300 transition flex items-center gap-1.5">
+                                    <i class="fa-solid fa-envelope text-sky-400"></i> Rasiq.mwani@gmail.com
+                                </a>
+                                <span class="hidden sm:inline text-slate-600">|</span>
+                                <a href="tel:+917006335686" class="hover:text-emerald-300 transition flex items-center gap-1.5">
+                                    <i class="fa-solid fa-phone text-emerald-400"></i> +91-7006335686
+                                </a>
+                                <span class="hidden sm:inline text-slate-600">|</span>
+                                <a href="https://wa.me/919797743321" target="_blank" rel="noopener noreferrer" class="hover:text-emerald-300 transition flex items-center gap-1.5">
+                                    <i class="fa-brands fa-whatsapp text-emerald-500"></i> WhatsApp
+                                </a>
+                                <span class="hidden sm:inline text-slate-600">|</span>
+                                <a href="https://linkedin.com/in/rasiq-mushtaq-wani" target="_blank" rel="noopener noreferrer" class="hover:text-blue-300 transition flex items-center gap-1.5">
+                                    <i class="fa-brands fa-linkedin text-blue-400"></i> LinkedIn
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap items-center justify-center gap-2 no-print shrink-0 w-full lg:w-auto mt-4 lg:mt-0">
+                        <button onclick="openDocumentViewer('cvs', 0)" class="px-4 py-2.5 rounded-lg bg-indigo-600/90 hover:bg-indigo-500 text-xs font-bold text-white transition flex items-center gap-2 border border-indigo-400/50 shadow-[0_0_15px_rgba(79,70,229,0.5)] animate-pulse hover:animate-none w-full sm:w-auto justify-center">
+                            <i class="fa-solid fa-eye"></i> View Resume
+                        </button>
+                        <button onclick="openTab('degrees')" class="px-3.5 py-2.5 rounded-lg bg-teal-600/80 hover:bg-teal-500 text-xs font-bold text-white transition flex items-center gap-2 border border-teal-500/50 flex-grow sm:flex-grow-0 justify-center">
+                            <i class="fa-solid fa-user-graduate"></i> Degrees
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- ADMIN GLOBAL ACTIONS BANNER -->
+        <div id="admin-banner" class="hidden bg-purple-950/90 backdrop-blur-xl border-b border-purple-500/50 px-4 py-3 shadow-xl z-10">
+            <div class="max-w-7xl mx-auto flex flex-col md:flex-row flex-wrap items-center justify-between gap-3 text-xs">
+                <div class="flex items-center gap-2 text-purple-100 text-glow">
+                    <i class="fa-solid fa-shield-halved text-purple-400 text-lg drop-shadow-md"></i>
+                    <span><strong>Security Check Passed:</strong> Admin features unlocked. All changes are locally persistent and self-recoverable.</span>
+                </div>
+                <div class="flex flex-wrap items-center gap-2">
+                    <button onclick="connectProjectFolder()" id="folder-connect-btn" class="px-3 py-1.5 rounded bg-blue-700 hover:bg-blue-600 text-white font-bold border border-blue-400 shadow-md"><i class="fa-solid fa-folder-open mr-1"></i> Connect Local Folder</button>
+                    <button onclick="openVisitorLogModal()" class="px-3 py-1.5 rounded bg-amber-700 hover:bg-amber-600 text-white font-bold border border-amber-500 shadow-md"><i class="fa-solid fa-table text-amber-300 mr-1"></i> Visitor Log</button>
+                    <button onclick="openChangePassword()" class="px-3 py-1.5 rounded bg-purple-800 hover:bg-purple-700 text-white border border-purple-500 font-bold"><i class="fa-solid fa-key"></i> Password</button>
+                    <button onclick="exportJSON()" class="px-3 py-1.5 rounded bg-slate-800 hover:bg-slate-700 text-white border border-slate-500 font-bold"><i class="fa-solid fa-download"></i> Backup JSON</button>
+                    <button onclick="exportMediaZip()" class="px-3 py-1.5 rounded bg-emerald-700 hover:bg-emerald-600 text-white border border-emerald-500 font-bold"><i class="fa-solid fa-file-zipper"></i> Media ZIP</button>
+                    <button onclick="document.getElementById('import-file').click()" class="px-3 py-1.5 rounded bg-slate-800 hover:bg-slate-700 text-white border border-slate-500 font-bold"><i class="fa-solid fa-upload"></i> Restore</button>
+                    <button onclick="resetDataToDefault()" class="px-3 py-1.5 rounded bg-rose-700 hover:bg-rose-600 text-white border border-rose-500 font-bold shadow-lg"><i class="fa-solid fa-rotate-left"></i> Reset</button>
+                    <button onclick="toggleAdminMode()" class="px-3 py-1.5 rounded bg-purple-900 hover:bg-purple-800 text-white border border-purple-600 font-bold ml-2"><i class="fa-solid fa-lock"></i> Lock</button>
+                    <input type="file" id="import-file" class="hidden" accept=".json" onchange="importJSON(event)">
+                </div>
+            </div>
+        </div>
+
+        <!-- MAIN CONTENT AREA -->
+        <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex-grow w-full relative z-10">
+
+            <!-- TAB 0: HOME / PROFILE -->
+            <section id="content-home" class="tab-content space-y-8 mac-window-animate">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center min-h-[55vh]">
+                    <div class="flex justify-center items-center relative h-[300px] sm:h-[380px] w-full max-w-[380px] mx-auto scale-90 sm:scale-100">
+                        <div class="relative z-10 w-28 h-28 sm:w-36 sm:h-36 rounded-full border-[3px] border-sky-400 shadow-[0_0_40px_rgba(56,189,248,0.8)] overflow-hidden cursor-pointer bg-slate-900" onclick="openImageLightbox('RMW.png', 'RASIQ MUSHTAQ WANI')">
+                            <img src="RMW.png" class="w-full h-full object-cover hover:scale-110 transition duration-500" onError="this.src='https://via.placeholder.com/150'">
+                        </div>
+                        <div class="orbit-container">
+                            <div class="orbit-item item-1"><div class="orbit-icon bg-slate-900/90 backdrop-blur-md border border-sky-400 rounded-full shadow-[0_0_15px_rgba(56,189,248,0.6)]"><i class="fa-solid fa-building text-sky-400 text-lg mb-0.5"></i><span class="text-[8px] font-bold text-sky-200 tracking-wider">REVIT</span></div></div>
+                            <div class="orbit-item item-2"><div class="orbit-icon bg-slate-900/90 backdrop-blur-md border border-amber-400 rounded-full shadow-[0_0_15px_rgba(251,191,36,0.6)]"><i class="fa-solid fa-cubes text-amber-400 text-lg mb-0.5"></i><span class="text-[7px] font-bold text-amber-200 tracking-widest">NAVISWORKS</span></div></div>
+                            <div class="orbit-item item-3"><div class="orbit-icon bg-slate-900/90 backdrop-blur-md border border-purple-400 rounded-full shadow-[0_0_15px_rgba(192,132,252,0.6)]"><i class="fa-solid fa-calculator text-purple-400 text-lg mb-0.5"></i><span class="text-[8px] font-bold text-purple-200 tracking-wider">ABAQUS</span></div></div>
+                            <div class="orbit-item item-4"><div class="orbit-icon bg-slate-900/90 backdrop-blur-md border border-emerald-400 rounded-full shadow-[0_0_15px_rgba(52,211,153,0.6)]"><i class="fa-solid fa-vial-circle-check text-emerald-400 text-lg mb-0.5"></i><span class="text-[8px] font-bold text-emerald-200 tracking-wider">QA / QC</span></div></div>
+                            <div class="orbit-item item-5"><div class="orbit-icon bg-slate-900/90 backdrop-blur-md border border-blue-400 rounded-full shadow-[0_0_15px_rgba(96,165,250,0.6)]"><i class="fa-solid fa-cloud text-blue-400 text-lg mb-0.5"></i><span class="text-[8px] font-bold text-blue-200 tracking-wider">BIM 360</span></div></div>
+                            <div class="orbit-item item-6"><div class="orbit-icon bg-slate-900/90 backdrop-blur-md border border-rose-400 rounded-full shadow-[0_0_15px_rgba(251,113,133,0.6)]"><i class="fa-solid fa-drafting-compass text-rose-400 text-lg mb-0.5"></i><span class="text-[8px] font-bold text-rose-200 tracking-wider">AUTOCAD</span></div></div>
+                        </div>
+                    </div>
+
+                    <div class="glass-card p-6 sm:p-10 rounded-2xl flex flex-col justify-center text-center h-full relative overflow-hidden border-t-4 border-t-sky-500">
+                        <div class="flex items-center justify-between absolute top-4 left-6 right-6">
+                            <div class="mac-dots"><span class="mac-dot mac-dot-close"></span><span class="mac-dot mac-dot-minimize"></span><span class="mac-dot mac-dot-expand"></span></div>
+                            <span class="text-[10px] font-mono text-slate-500">Inspiration.app</span>
+                        </div>
+                        <i class="fa-solid fa-quote-left text-3xl sm:text-5xl text-sky-400/20 absolute top-8 left-6"></i>
+                        <i class="fa-solid fa-quote-right text-3xl sm:text-5xl text-sky-400/20 absolute bottom-6 right-6"></i>
+                        <div id="quote-box" class="quote-fade text-glow z-10 px-2 sm:px-4 mt-6">
+                            <h3 class="text-xl sm:text-3xl font-display font-bold text-white leading-tight mb-4" id="quote-text">"And He found you lost and guided you."</h3>
+                            <p class="text-xs sm:text-sm font-bold text-emerald-400 font-mono tracking-widest uppercase" id="quote-author">- Quran 93:7</p>
+                        </div>
+                        <div class="mt-6 sm:mt-8 pt-4 sm:pt-6 border-t border-slate-700/50 text-xs text-slate-300 z-10">
+                            <p class="font-signature text-2xl sm:text-3xl text-sky-300 mt-2 text-glow">Rasiq Mushtaq Wani</p>
+                            <p class="mt-1 font-mono tracking-widest text-[10px]">CIVIL BIM SPECIALIST</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- TAB 1: SUMMARY -->
+            <section id="content-summary" class="tab-content space-y-6 hidden">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div class="glass-card p-4 sm:p-5 rounded-xl text-center border-l-4 border-l-sky-500">
+                        <p class="text-[10px] uppercase font-bold text-slate-300 text-glow">Combined Exp.</p><p class="text-xl sm:text-2xl font-extrabold text-white mt-1 text-glow">3+ Years</p><p class="text-[10px] text-slate-300 mt-0.5 text-glow">Site QA/QC & BIM</p>
+                    </div>
+                    <div class="glass-card p-4 sm:p-5 rounded-xl text-center border-l-4 border-l-emerald-500">
+                        <p class="text-[10px] uppercase font-bold text-slate-300 text-glow">Clash Resolution</p><p class="text-xl sm:text-2xl font-extrabold text-emerald-400 mt-1 text-glow">300+/Wk</p><p class="text-[10px] text-slate-300 mt-0.5 text-glow">Revit & Navisworks</p>
+                    </div>
+                    <div class="glass-card p-4 sm:p-5 rounded-xl text-center border-l-4 border-l-indigo-500">
+                        <p class="text-[10px] uppercase font-bold text-slate-300 text-glow">Development</p><p class="text-xl sm:text-2xl font-extrabold text-indigo-400 mt-1 text-glow">LOD 100-350</p><p class="text-[10px] text-slate-300 mt-0.5 text-glow">Struct & Arch BIM</p>
+                    </div>
+                    <div class="glass-card p-4 sm:p-5 rounded-xl text-center border-l-4 border-l-amber-500">
+                        <p class="text-[10px] uppercase font-bold text-slate-300 text-glow">Standards</p><p class="text-xl sm:text-2xl font-extrabold text-amber-400 mt-1 text-glow">100% Quality</p><p class="text-[10px] text-slate-300 mt-0.5 text-glow">Field QA/QC</p>
+                    </div>
+                </div>
+                <div class="glass-card p-6 sm:p-8 rounded-2xl relative">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="mac-dots"><span class="mac-dot mac-dot-close"></span><span class="mac-dot mac-dot-minimize"></span><span class="mac-dot mac-dot-expand"></span></div>
+                        <span class="text-[10px] font-mono text-slate-500">Summary.md</span>
+                    </div>
+                    <h2 class="text-xl font-bold font-display text-white mb-4 text-glow"><i class="fa-solid fa-address-card text-sky-400"></i> Executive Summary</h2>
+                    <p class="text-slate-100 text-sm sm:text-base leading-relaxed text-glow mb-3">High-performing <strong>Civil BIM Engineer</strong> with 3+ years of combined engineering expertise, seamlessly bridging 2+ years of hands-on civil site/field engineering & QA/QC leadership with 1+ years of dedicated BIM modeling and digital coordination. Proven expertise in developing 3D Structural and Architectural BIM models (LOD 100 to LOD 350) using Autodesk Revit, Navisworks Manage, and AutoCAD.</p>
+                    <p class="text-slate-100 text-sm sm:text-base leading-relaxed text-glow">Specialized in multi-disciplinary clash resolution, IFC interoperability, structural shop drawing extraction, Scan-to-BIM, and FEA seismic modeling (ABAQUS). Leverages deep concrete technology knowledge and BIM automation tools (Dynamo, pyRevit) to eliminate site conflicts, optimize design mix recipes, and accelerate project delivery under international and UAE building codes.</p>
+                </div>
+            </section>
+
+            <!-- TAB 2: DETAILED EXPERIENCE -->
+            <section id="content-experience" class="tab-content space-y-6 hidden">
+                <div class="glass-card p-4 sm:p-6 rounded-2xl">
+                    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 gap-3 border-b border-slate-700/50 pb-4">
+                        <div>
+                            <div class="mac-dots mb-2"><span class="mac-dot mac-dot-close"></span><span class="mac-dot mac-dot-minimize"></span><span class="mac-dot mac-dot-expand"></span></div>
+                            <h2 class="text-xl font-bold text-white text-glow"><i class="fa-solid fa-briefcase text-amber-500"></i> Professional Experience (Auto-Updating Duration)</h2>
+                            <p class="text-xs text-slate-300">Current role tracks exact daily tenure; past roles are rounded to 6-month milestones.</p>
+                        </div>
+                        <button onclick="openFormModal('experience')" class="admin-only hidden px-3 py-1.5 bg-amber-600 rounded text-white text-xs font-bold border border-amber-400 shadow-lg">+ Add Experience</button>
+                    </div>
+                    <div id="experience-container" class="space-y-6"></div>
+                </div>
+            </section>
+
+            <!-- TAB 3: SOFTWARE SUITE & SKILLS -->
+            <section id="content-software" class="tab-content space-y-6 hidden">
+                <div class="glass-card p-4 sm:p-6 rounded-2xl">
+                    <div class="flex items-center justify-between mb-4 border-b border-slate-700/50 pb-3">
+                        <div class="mac-dots"><span class="mac-dot mac-dot-close"></span><span class="mac-dot mac-dot-minimize"></span><span class="mac-dot mac-dot-expand"></span></div>
+                        <span class="text-[10px] font-mono text-slate-500">Software_Competencies.app</span>
+                    </div>
+                    <h2 class="text-xl font-bold text-white mb-2 text-glow"><i class="fa-solid fa-laptop-code text-fuchsia-400"></i> Core Competencies & Technical Software Suite</h2>
+                    <p class="text-xs text-slate-300 mb-6 text-glow">Specific workflows and capabilities mastered within each software tool.</p>
+                    
+                    <div class="space-y-6">
+                        <div class="bg-slate-900/60 rounded-xl border border-slate-600 p-5 shadow-lg">
+                            <h3 class="font-bold text-white text-base mb-4 border-b border-slate-700 pb-2 text-glow"><i class="fa-solid fa-layer-group text-sky-400 mr-2"></i> 1. Primary BIM & Drafting Engine</h3>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                                <div class="p-4 bg-slate-800/50 rounded-lg border border-slate-600 hover:border-sky-400 transition">
+                                    <div class="flex items-center gap-3 mb-2"><i class="fa-solid fa-building text-2xl text-sky-400"></i><h4 class="font-bold text-white text-sm">Autodesk Revit</h4></div>
+                                    <ul class="text-xs text-slate-300 list-disc list-inside space-y-1">
+                                        <li>Architectural & Structural 3D Modeling.</li>
+                                        <li>LOD 100 to LOD 350 generation.</li>
+                                        <li>Extensive 3D Rebar Detailing & Scheduling.</li>
+                                        <li>Central Worksharing & IFC Exports.</li>
+                                    </ul>
+                                </div>
+                                <div class="p-4 bg-slate-800/50 rounded-lg border border-slate-600 hover:border-amber-400 transition">
+                                    <div class="flex items-center gap-3 mb-2"><i class="fa-solid fa-cubes text-2xl text-amber-400"></i><h4 class="font-bold text-white text-sm">Navisworks Manage</h4></div>
+                                    <ul class="text-xs text-slate-300 list-disc list-inside space-y-1">
+                                        <li>Multi-disciplinary Hard & Soft Clash Detection.</li>
+                                        <li>300+ conflicts resolved weekly.</li>
+                                        <li>Dynamic spatial coordination.</li>
+                                        <li>Automated Issue Matrix Report generation.</li>
+                                    </ul>
+                                </div>
+                                <div class="p-4 bg-slate-800/50 rounded-lg border border-slate-600 hover:border-cyan-400 transition">
+                                    <div class="flex items-center gap-3 mb-2"><i class="fa-solid fa-vector-square text-2xl text-cyan-400"></i><h4 class="font-bold text-white text-sm">Scan to BIM & Point Cloud</h4></div>
+                                    <ul class="text-xs text-slate-300 list-disc list-inside space-y-1">
+                                        <li>3D Laser Scan Point Cloud conversion to Revit.</li>
+                                        <li>As-built vs design discrepancy analysis.</li>
+                                        <li>Foundation & Core wall structural alignment.</li>
+                                        <li>CAD-to-BIM 3D transformation.</li>
+                                    </ul>
+                                </div>
+                                <div class="p-4 bg-slate-800/50 rounded-lg border border-slate-600 hover:border-rose-400 transition">
+                                    <div class="flex items-center gap-3 mb-2"><i class="fa-solid fa-drafting-compass text-2xl text-rose-400"></i><h4 class="font-bold text-white text-sm">AutoCAD & SketchUp</h4></div>
+                                    <ul class="text-xs text-slate-300 list-disc list-inside space-y-1">
+                                        <li>2D CAD drafting & 3D conversion.</li>
+                                        <li>Structural Shop Drawings extraction.</li>
+                                        <li>Rapid 3D conceptual massing.</li>
+                                        <li>Site layout drafting.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-slate-900/60 rounded-xl border border-slate-600 p-5 shadow-lg">
+                            <h3 class="font-bold text-white text-base mb-4 border-b border-slate-700 pb-2 text-glow"><i class="fa-solid fa-robot text-teal-400 mr-2"></i> 2. Automation, Scripting & CDE</h3>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                                <div class="p-4 bg-slate-800/50 rounded-lg border border-slate-600 hover:border-teal-400 transition">
+                                    <div class="flex items-center gap-3 mb-2"><i class="fa-solid fa-diagram-project text-2xl text-teal-400"></i><h4 class="font-bold text-white text-sm">Dynamo</h4></div>
+                                    <ul class="text-xs text-slate-300 list-disc list-inside space-y-1">
+                                        <li>Visual scripting to automate repetitive tasks.</li>
+                                        <li>Bulk parameter synchronization.</li>
+                                        <li>Algorithmic geometry creation.</li>
+                                    </ul>
+                                </div>
+                                <div class="p-4 bg-slate-800/50 rounded-lg border border-slate-600 hover:border-yellow-400 transition">
+                                    <div class="flex items-center gap-3 mb-2"><i class="devicon-python-plain text-2xl text-yellow-400"></i><h4 class="font-bold text-white text-sm">pyRevit (Python)</h4></div>
+                                    <ul class="text-xs text-slate-300 list-disc list-inside space-y-1">
+                                        <li>Custom toolbars for drafting speedups.</li>
+                                        <li>Automated view cleanup workflows.</li>
+                                        <li>Model health auditing scripts.</li>
+                                    </ul>
+                                </div>
+                                <div class="p-4 bg-slate-800/50 rounded-lg border border-slate-600 hover:border-blue-400 transition">
+                                    <div class="flex items-center gap-3 mb-2"><i class="fa-solid fa-cloud text-2xl text-blue-400"></i><h4 class="font-bold text-white text-sm">ACC / BIM 360</h4></div>
+                                    <ul class="text-xs text-slate-300 list-disc list-inside space-y-1">
+                                        <li>Cloud-based Common Data Environment setup.</li>
+                                        <li>Autodesk Issues Add-In management.</li>
+                                        <li>Seamless multi-user model collaboration.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-slate-900/60 rounded-xl border border-slate-600 p-5 shadow-lg">
+                            <h3 class="font-bold text-white text-base mb-4 border-b border-slate-700 pb-2 text-glow"><i class="fa-solid fa-calculator text-purple-400 mr-2"></i> 3. Structural Analysis & FEA Simulation</h3>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div class="p-4 bg-slate-800/50 rounded-lg border border-slate-600 hover:border-purple-400 transition">
+                                    <div class="flex items-center gap-3 mb-2"><i class="fa-solid fa-shapes text-2xl text-purple-400"></i><h4 class="font-bold text-white text-sm">ABAQUS FEA</h4></div>
+                                    <ul class="text-xs text-slate-300 list-disc list-inside space-y-1">
+                                        <li><strong>Thesis Core:</strong> Nonlinear Pushover Analysis.</li>
+                                        <li>Cyclic Hysteretic & Incremental Dynamic testing.</li>
+                                        <li>Eigenvalue analysis for structural seismic behavior.</li>
+                                        <li>Energy dissipation evaluation on Steel Slitted Shear Walls.</li>
+                                    </ul>
+                                </div>
+                                <div class="p-4 bg-slate-800/50 rounded-lg border border-slate-600 hover:border-indigo-400 transition">
+                                    <div class="flex items-center gap-3 mb-2"><i class="fa-solid fa-layer-group text-2xl text-indigo-400"></i><h4 class="font-bold text-white text-sm">ETABS & STAAD.Pro</h4></div>
+                                    <ul class="text-xs text-slate-300 list-disc list-inside space-y-1">
+                                        <li>Advanced structural RC frame analysis.</li>
+                                        <li>Lateral load resistance calculation.</li>
+                                        <li>Building structural integrity modeling.</li>
+                                        <li>Base setup for Tekla Structures detailing.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-slate-900/60 rounded-xl border border-slate-600 p-5 shadow-lg">
+                            <h3 class="font-bold text-white text-base mb-4 border-b border-slate-700 pb-2 text-glow"><i class="fa-solid fa-vial-circle-check text-emerald-400 mr-2"></i> 4. Concrete QA/QC & Civil Topography</h3>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div class="p-4 bg-slate-800/50 rounded-lg border border-slate-600 hover:border-emerald-400 transition">
+                                    <div class="flex items-center gap-3 mb-2"><i class="fa-solid fa-flask text-2xl text-emerald-400"></i><h4 class="font-bold text-white text-sm">Concrete QA/QC & NDT</h4></div>
+                                    <ul class="text-xs text-slate-300 list-disc list-inside space-y-1">
+                                        <li>Design Mix Optimization (boosted strength by 50%).</li>
+                                        <li>Admixtures R&D analysis (reduced waste 15%).</li>
+                                        <li>Non-Destructive Testing: Rebound Hammer & UPV.</li>
+                                        <li>IS/ASTM field compliance for 120+ concrete samples.</li>
+                                    </ul>
+                                </div>
+                                <div class="p-4 bg-slate-800/50 rounded-lg border border-slate-600 hover:border-green-500 transition">
+                                    <div class="flex items-center gap-3 mb-2"><i class="fa-solid fa-globe text-2xl text-green-500"></i><h4 class="font-bold text-white text-sm">QGIS & Topography</h4></div>
+                                    <ul class="text-xs text-slate-300 list-disc list-inside space-y-1">
+                                        <li>Geographic Information Systems (GIS) analysis.</li>
+                                        <li>Spatial data evaluation and mapping.</li>
+                                        <li>Civil engineering site planning & terrain contour generation.</li>
+                                        <li>Integrating site data into BIM workflows.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- TAB 4: ARCHITECTURAL BIM -->
+            <section id="content-arch" class="tab-content space-y-6 hidden">
+                <div class="glass-card p-4 sm:p-6 rounded-2xl">
+                    <div class="flex flex-col md:flex-row items-start md:items-center justify-between mb-6 gap-4 border-b border-slate-700/50 pb-4">
+                        <div>
+                            <div class="mac-dots mb-2"><span class="mac-dot mac-dot-close"></span><span class="mac-dot mac-dot-minimize"></span><span class="mac-dot mac-dot-expand"></span></div>
+                            <h2 class="text-xl font-bold text-white text-glow"><i class="fa-solid fa-building-user text-indigo-400"></i> Architectural BIM Masterplans</h2>
+                            <p class="text-xs text-slate-300">Automated Layouts, Door Schedules.</p>
+                        </div>
+                        <div class="flex flex-wrap gap-2">
+                            <button onclick="toggleCarouselPlay()" id="carousel-play-btn" class="px-3 py-1.5 rounded bg-slate-800 text-xs text-white border border-slate-600"><i class="fa-solid fa-pause"></i> Pause Slideshow</button>
+                            <button onclick="openFormModal('drawing')" class="admin-only hidden px-3 py-1.5 bg-indigo-600 rounded text-white text-xs font-bold border border-indigo-400 shadow-lg"><i class="fa-solid fa-plus"></i> Add Drawing</button>
+                        </div>
+                    </div>
+                    <div class="relative bg-slate-900/80 border border-slate-700/50 rounded-2xl overflow-hidden shadow-2xl" onmouseenter="isCarouselPlaying=false" onmouseleave="if(carouselInterval) isCarouselPlaying=true">
+                        <div class="p-4 sm:p-8 min-h-[440px] flex flex-col justify-between blueprint-bg">
+                            <div class="flex flex-col sm:flex-row justify-between items-start z-10 gap-3">
+                                <div>
+                                    <span id="slide-sheet-badge" class="px-2 py-1 rounded bg-indigo-900/80 text-indigo-300 font-mono text-xs border border-indigo-600">Sheet</span>
+                                    <h3 id="slide-title" class="text-lg sm:text-xl font-bold text-white mt-2 text-glow">TITLE</h3><p id="slide-subtitle" class="text-xs text-slate-300 text-glow">Scale</p>
+                                </div>
+                                <button onclick="openCurrentSlideModal()" class="px-4 py-2 rounded bg-indigo-600 hover:bg-indigo-500 text-xs font-bold text-white shadow-lg border border-indigo-400 w-full sm:w-auto"><i class="fa-solid fa-search-plus"></i> Inspect Viewer</button>
+                            </div>
+                            <div class="my-6 p-3 sm:p-4 bg-slate-950/70 rounded-xl border border-slate-600 z-10 cursor-pointer overflow-x-hidden" onclick="openCurrentSlideModal()">
+                                <div id="slide-preview-area"></div>
+                            </div>
+                            <div class="flex flex-wrap justify-between items-center z-10 pt-4 border-t border-slate-600 gap-3">
+                                <button onclick="prevDrawing()" class="p-2 rounded bg-slate-800 text-white"><i class="fa-solid fa-chevron-left"></i> Prev</button>
+                                <div id="carousel-indicators" class="flex flex-wrap gap-2 justify-center flex-grow"></div>
+                                <button onclick="nextDrawing()" class="p-2 rounded bg-slate-800 text-white">Next <i class="fa-solid fa-chevron-right"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <h3 class="text-base font-bold text-white mt-8 mb-4 text-glow">All Architectural Shop Drawings</h3>
+                    <div id="drawings-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6"></div>
+                </div>
+            </section>
+
+            <!-- TAB 5: STRUCTURAL BIM -->
+            <section id="content-struct" class="tab-content space-y-6 hidden">
+                <div class="glass-card p-4 sm:p-6 rounded-2xl border-l-4 border-purple-500">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="px-2 py-1 rounded bg-purple-900/80 text-purple-300 text-[10px] font-bold uppercase border border-purple-500">FEA Seismic Analysis Research</span>
+                        <button onclick="openFormModal('structdrawing')" class="admin-only hidden px-3 py-1.5 bg-purple-600 rounded text-white text-xs font-bold border border-purple-400 shadow-lg"><i class="fa-solid fa-plus"></i> Add Structural PDF</button>
+                    </div>
+                    <h3 class="text-lg font-bold text-white text-glow">Exploring Lateral Load Resisting Ability of Steel Slitted Shear Walls Retrofitted with Moment Resisting Frame | B.E. Thesis Project</h3>
+                    <p class="text-xs sm:text-sm text-slate-200 mt-2 text-glow">Executed finite element modeling using <strong>ABAQUS</strong> software. Conducted Eigenvalue analysis, Nonlinear Pushover analysis, Incremental Dynamic analysis, and Cyclic Hysteretic load analysis to evaluate structural seismic behavior and energy dissipation.</p>
+                </div>
+
+                <div class="glass-card p-4 sm:p-6 rounded-2xl">
+                    <div class="flex flex-col md:flex-row items-start md:items-center justify-between mb-6 gap-4 border-b border-slate-700/50 pb-4">
+                        <div>
+                            <div class="mac-dots mb-2"><span class="mac-dot mac-dot-close"></span><span class="mac-dot mac-dot-minimize"></span><span class="mac-dot mac-dot-expand"></span></div>
+                            <h2 class="text-xl font-bold text-white text-glow"><i class="fa-solid fa-cubes-stacked text-purple-400"></i> Structural BIM Masterplans & Rebar Detailing Sheets</h2>
+                            <p class="text-xs text-slate-300">Foundation, Transfer Slabs, Columns & Core Walls in Revit.</p>
+                        </div>
+                        <div class="flex flex-wrap gap-2">
+                            <button onclick="toggleStructCarouselPlay()" id="struct-carousel-play-btn" class="px-3 py-1.5 rounded bg-slate-800 text-xs text-white border border-slate-600"><i class="fa-solid fa-pause"></i> Pause Slideshow</button>
+                            <button onclick="openFormModal('structdrawing')" class="admin-only hidden px-3 py-1.5 bg-purple-600 rounded text-white text-xs font-bold border border-purple-400 shadow-lg"><i class="fa-solid fa-plus"></i> Add Structural PDF</button>
+                        </div>
+                    </div>
+                    <div class="relative bg-slate-900/80 border border-slate-700/50 rounded-2xl overflow-hidden shadow-2xl" onmouseenter="isStructCarouselPlaying=false" onmouseleave="if(structCarouselInterval) isStructCarouselPlaying=true">
+                        <div class="p-4 sm:p-8 min-h-[440px] flex flex-col justify-between blueprint-bg">
+                            <div class="flex flex-col sm:flex-row justify-between items-start z-10 gap-3">
+                                <div>
+                                    <span id="struct-slide-sheet-badge" class="px-2 py-1 rounded bg-purple-900/80 text-purple-300 font-mono text-xs border border-purple-600">Sheet</span>
+                                    <h3 id="struct-slide-title" class="text-lg sm:text-xl font-bold text-white mt-2 text-glow">TITLE</h3><p id="struct-slide-subtitle" class="text-xs text-slate-300 text-glow">Scale</p>
+                                </div>
+                                <button onclick="openCurrentStructSlideModal()" class="px-4 py-2 rounded bg-purple-600 hover:bg-purple-500 text-xs font-bold text-white shadow-lg border border-purple-400 w-full sm:w-auto"><i class="fa-solid fa-search-plus"></i> Inspect Structural Viewer</button>
+                            </div>
+                            <div class="my-6 p-3 sm:p-4 bg-slate-950/70 rounded-xl border border-slate-600 z-10 cursor-pointer overflow-x-hidden" onclick="openCurrentStructSlideModal()">
+                                <div id="struct-slide-preview-area"></div>
+                            </div>
+                            <div class="flex flex-wrap justify-between items-center z-10 pt-4 border-t border-slate-600 gap-3">
+                                <button onclick="prevStructDrawing()" class="p-2 rounded bg-slate-800 text-white"><i class="fa-solid fa-chevron-left"></i> Prev</button>
+                                <div id="struct-carousel-indicators" class="flex flex-wrap gap-2 justify-center flex-grow"></div>
+                                <button onclick="nextStructDrawing()" class="p-2 rounded bg-slate-800 text-white">Next <i class="fa-solid fa-chevron-right"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <h3 class="text-base font-bold text-white mt-8 mb-4 text-glow">All Structural Engineering Drawings & PDFs</h3>
+                    <div id="struct-drawings-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6"></div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+                    <div class="glass-card p-4 sm:p-6 rounded-2xl">
+                        <h3 class="text-base font-bold text-sky-300 mb-3 text-glow"><i class="fa-solid fa-cubes-stacked"></i> Structural BIM Modeling Scope (LOD 100-350)</h3>
+                        <ul class="space-y-2 text-xs text-slate-200 list-disc list-inside">
+                            <li>Superstructure 3D modeling in Revit (Columns, Beams, Transfer Slabs, Core Walls).</li>
+                            <li>Foundation modeling (Pile foundations, Mat/Raft slabs, Isolated/strip footings).</li>
+                            <li>Comprehensive 3D Rebar Detailing: Area & path rebar, stirrups, ties, constraints, cover settings.</li>
+                            <li>Scan-to-BIM verification for foundation and core-wall alignment.</li>
+                        </ul>
+                    </div>
+                    <div class="glass-card p-4 sm:p-6 rounded-2xl">
+                        <h3 class="text-base font-bold text-emerald-300 mb-3 text-glow"><i class="fa-solid fa-vial-circle-check"></i> Concrete QA/QC Leadership</h3>
+                        <ul class="space-y-2 text-xs text-slate-200 list-disc list-inside">
+                            <li>High-performance concrete mix design formulation & novel admixture trials.</li>
+                            <li>Non-Destructive Material Testing (NDT) techniques (Rebound Hammer, UPV).</li>
+                            <li>Field QA/QC supervision complying with IS / ASTM and UAE Building Codes.</li>
+                            <li>Rigorous quality control for 120+ concrete samples ensuring 100% compliance.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- TAB 6: PROJECTS -->
+            <section id="content-projects" class="tab-content space-y-6 hidden">
+                <div class="glass-card p-4 sm:p-6 rounded-2xl">
+                    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 gap-3">
+                        <div><h2 class="text-xl font-bold text-white text-glow"><i class="fa-solid fa-city text-cyan-400"></i> Key Projects & Engineering Achievements</h2><p class="text-xs text-slate-300">High-impact engineering assignments from CV.</p></div>
+                        <button onclick="openFormModal('project')" class="admin-only hidden px-3 py-1.5 bg-cyan-600 rounded text-white text-xs font-bold border border-cyan-400 shadow-lg">+ Add Project</button>
+                    </div>
+                    <div id="projects-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6"></div>
+                </div>
+            </section>
+
+            <!-- TAB 7: VIDEOS -->
+            <section id="content-videos" class="tab-content space-y-6 hidden">
+                <div class="glass-card p-4 sm:p-6 rounded-2xl">
+                    <div class="flex justify-between items-center mb-6">
+                        <div><h2 class="text-xl font-bold text-white text-glow"><i class="fa-solid fa-video text-rose-400"></i> Project Videos & Walk-Throughs</h2><p class="text-xs text-slate-300">BIM Animations & Demos.</p></div>
+                        <button onclick="openFormModal('video')" class="admin-only hidden px-3 py-1.5 bg-rose-600 rounded text-white text-xs font-bold border border-rose-400 shadow-lg">+ Add Video</button>
+                    </div>
+                    <div id="videos-container" class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6"></div>
+                </div>
+            </section>
+
+            <!-- TAB 8: CVS -->
+            <section id="content-cvs" class="tab-content space-y-6 hidden">
+                <div class="glass-card p-4 sm:p-6 rounded-2xl border-l-4 border-teal-500">
+                    <div class="flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
+                        <div>
+                            <h2 class="text-2xl font-bold text-white text-glow"><i class="fa-solid fa-file-invoice text-teal-400"></i> Official Resume / CV</h2>
+                            <p class="text-sm text-slate-300 mt-2 text-glow">Open the native PDF viewer to read or download your CV.</p>
+                        </div>
+                        <button onclick="openDocumentViewer('cvs', 0)" class="w-full md:w-auto px-8 py-4 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold transition shadow-[0_0_20px_rgba(79,70,229,0.6)] animate-pulse hover:animate-none border border-indigo-400"><i class="fa-solid fa-eye"></i> OPEN RESUME VIEWER</button>
+                    </div>
+                    <div class="mt-8 border-t border-slate-700/50 pt-6">
+                        <div class="flex justify-between items-center mb-4"><h3 class="text-lg font-bold text-white">Other CV Versions</h3><button onclick="openFormModal('cv')" class="admin-only hidden px-3 py-1.5 bg-teal-600 rounded text-white text-xs font-bold border border-teal-400 shadow-lg">+ Upload CV</button></div>
+                        <div id="cvs-container" class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- TAB 9: DEGREES -->
+            <section id="content-degrees" class="tab-content space-y-6 hidden">
+                <div class="glass-card p-4 sm:p-6 rounded-2xl">
+                    <div class="flex justify-between items-center mb-6">
+                        <div><h2 class="text-xl font-bold text-white text-glow"><i class="fa-solid fa-user-graduate text-pink-400"></i> Education</h2><p class="text-xs text-slate-300">University and technical board credentials.</p></div>
+                        <button onclick="openFormModal('degree')" class="admin-only hidden px-3 py-1.5 bg-pink-600 rounded text-white text-xs font-bold border border-pink-400 shadow-lg">+ Add Degree</button>
+                    </div>
+                    <div id="degrees-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6"></div>
+                </div>
+            </section>
+
+            <!-- TAB 10: CERTIFICATES -->
+            <section id="content-certificates" class="tab-content space-y-6 hidden">
+                <div class="glass-card p-4 sm:p-6 rounded-2xl">
+                    <div class="flex justify-between items-center mb-6">
+                        <div><h2 class="text-xl font-bold text-white text-glow"><i class="fa-solid fa-certificate text-emerald-400"></i> Professional Certifications</h2><p class="text-xs text-slate-300">Software training & skill credentials.</p></div>
+                        <button onclick="openFormModal('certificate')" class="admin-only hidden px-3 py-1.5 bg-emerald-600 rounded text-white text-xs font-bold border border-emerald-400 shadow-lg">+ Add Cert</button>
+                    </div>
+                    <div id="certificates-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6"></div>
+                </div>
+            </section>
+
+            <!-- TAB 11: WORK PDFS -->
+            <section id="content-workpdfs" class="tab-content space-y-6 hidden">
+                <div class="glass-card p-4 sm:p-6 rounded-2xl">
+                    <div class="flex justify-between items-center mb-6">
+                        <div><h2 class="text-xl font-bold text-white text-glow"><i class="fa-solid fa-folder-tree text-amber-400"></i> Work PDFs & Drawings</h2><p class="text-xs text-slate-300">High-resolution Structural & Architectural PDFs.</p></div>
+                        <button onclick="openFormModal('workpdf')" class="admin-only hidden px-3 py-1.5 bg-amber-600 rounded text-white text-xs font-bold border border-amber-400 shadow-lg">+ Add PDF</button>
+                    </div>
+                    <div id="workpdfs-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6"></div>
+                </div>
+            </section>
+            
+            <!-- TAB 12: DOCUMENTATION -->
+            <section id="content-docs" class="tab-content space-y-6 hidden">
+                <div class="glass-card p-4 sm:p-6 rounded-2xl">
+                    <div class="flex justify-between items-center mb-6">
+                        <div><h2 class="text-xl font-bold text-white text-glow"><i class="fa-solid fa-book-open-reader text-orange-400"></i> Documentation & Reports</h2><p class="text-xs text-slate-300">BIM Execution Plans, Clash Matrices.</p></div>
+                        <button onclick="openFormModal('doc')" class="admin-only hidden px-3 py-1.5 bg-orange-600 rounded text-white text-xs font-bold border border-orange-400 shadow-lg">+ Add Doc</button>
+                    </div>
+                    <div id="docs-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6"></div>
+                </div>
+            </section>
+
+            <!-- TAB 13: WHATSAPP -->
+            <section id="content-whatsapp" class="tab-content space-y-6 hidden">
+                <div class="glass-card p-6 sm:p-8 rounded-2xl max-w-2xl mx-auto text-center">
+                    <i class="fa-brands fa-whatsapp text-5xl text-emerald-400 mb-2 drop-shadow-md"></i>
+                    <h2 class="text-xl font-bold text-white mb-6 text-glow">Direct WhatsApp Messaging</h2>
+                    <form onsubmit="sendWhatsAppMessage(event)" class="space-y-4 text-xs text-left">
+                        <input type="text" id="wa-name" required placeholder="Your Name" class="w-full bg-slate-900/80 border border-slate-600 rounded-lg p-3 text-white">
+                        <input type="text" id="wa-subject" required placeholder="Subject" class="w-full bg-slate-900/80 border border-slate-600 rounded-lg p-3 text-white">
+                        <textarea id="wa-message" rows="4" required placeholder="Message..." class="w-full bg-slate-900/80 border border-slate-600 rounded-lg p-3 text-white"></textarea>
+                        <button type="submit" class="w-full py-3 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-bold shadow-lg border border-emerald-400"><i class="fa-brands fa-whatsapp text-lg"></i> Send via WhatsApp</button>
+                    </form>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- FOOTER -->
+        <footer class="glass-card pt-8 pb-12 text-center text-xs text-slate-300 mt-auto z-10 border-t border-slate-700/50 rounded-none">
+            <div class="max-w-7xl mx-auto px-4 flex flex-col items-center justify-center gap-4">
+                <div class="text-center space-y-2">
+                    <p class="text-glow font-mono tracking-widest text-emerald-400 font-bold">© 2026 RASIQ MUSHTAQ WANI. ALL RIGHTS RESERVED.</p>
+                    <p class="text-slate-300 max-w-3xl mx-auto leading-relaxed mt-2">
+                        Meticulously designed and coded from the ground up by <strong class="text-slate-100">Rasiq Mushtaq Wani</strong>. Every single line of code in this portfolio is a true labor of love, engineered to reflect a profound dedication to digital craftsmanship. All designs, code, and content are the exclusive intellectual property of the creator. Unauthorized replication or misuse is strictly prohibited.
+                    </p>
+                    <p class="text-sky-300 font-medium mt-3 italic text-sm text-glow">"Built with vision, crafted with passion, and inspired by the endless pursuit of perfection. ❤️"</p>
+                </div>
+                <div class="mt-4 text-center">
+                    <p class="font-signature text-4xl text-sky-400 text-glow tracking-widest">Rasiq Mushtaq Wani</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- ADMIN VISITOR EXCEL LOG MODAL -->
+    <div id="visitorLogModal" class="fixed inset-0 bg-black/95 backdrop-blur-md z-[70] flex items-center justify-center p-2 sm:p-4 hidden">
+        <div class="bg-slate-900 border border-amber-500/50 rounded-2xl max-w-5xl w-full max-h-[92vh] flex flex-col overflow-hidden shadow-[0_0_40px_rgba(245,158,11,0.3)] mac-modal-animate">
+            <div class="px-6 py-4 border-b border-slate-700 flex justify-between items-center bg-slate-950">
+                <div class="flex items-center gap-3">
+                    <div class="mac-dots"><span class="mac-dot mac-dot-close" onclick="closeVisitorLogModal()"></span><span class="mac-dot mac-dot-minimize"></span><span class="mac-dot mac-dot-expand"></span></div>
+                    <h3 class="text-white font-bold text-base sm:text-lg flex items-center gap-2"><i class="fa-solid fa-table text-amber-400"></i> Personal Visitor Log Sheet (Excel View)</h3>
+                </div>
+                <button onclick="closeVisitorLogModal()" class="text-slate-400 hover:text-white text-xl"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            
+            <div class="p-4 sm:p-6 overflow-y-auto flex-grow space-y-4">
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 bg-slate-950/80 p-3 rounded-xl border border-slate-800">
+                    <p class="text-xs text-slate-300"><i class="fa-solid fa-circle-info text-sky-400"></i> Tracks all contact queries, proposals, and CV views/downloads automatically.</p>
+                    <button onclick="exportVisitorLogCSV()" class="px-4 py-2 rounded bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs shadow-lg transition shrink-0"><i class="fa-solid fa-file-excel mr-1"></i> Export Excel (.CSV)</button>
+                </div>
+
+                <div class="overflow-x-auto rounded-xl border border-slate-700 shadow-inner">
+                    <table class="w-full text-xs text-slate-200 excel-table">
+                        <thead>
+                            <tr class="text-amber-400 font-mono text-[11px]">
+                                <th>#</th>
+                                <th>Date & Time</th>
+                                <th>Visitor Name</th>
+                                <th>Phone / Contact</th>
+                                <th>Company Name</th>
+                                <th>Email Address</th>
+                                <th>CV Checked</th>
+                                <th>Action Taken</th>
+                            </tr>
+                        </thead>
+                        <tbody id="visitor-log-table-body"></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="px-6 py-3 bg-slate-950 border-t border-slate-700 flex justify-between items-center text-xs">
+                <span class="text-slate-500 font-mono">Confidential Owner Log</span>
+                <button onclick="closeVisitorLogModal()" class="px-4 py-1.5 rounded bg-slate-800 hover:bg-slate-700 text-white font-bold">Close Sheet</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ADMIN LOGIN MODAL -->
+    <div id="adminLoginModal" class="fixed inset-0 bg-black/95 backdrop-blur-md z-[70] flex items-center justify-center p-4 hidden">
+        <div class="bg-slate-900 border border-emerald-500/50 rounded-xl max-w-sm w-full p-6 text-center shadow-[0_0_30px_rgba(16,185,129,0.3)] mac-modal-animate">
+            <div class="mac-dots mb-4 justify-center"><span class="mac-dot mac-dot-close"></span><span class="mac-dot mac-dot-minimize"></span><span class="mac-dot mac-dot-expand"></span></div>
+            <h3 class="text-white font-bold mb-4 text-lg"><i class="fa-solid fa-lock text-emerald-400"></i> Admin Access</h3>
+            <input type="password" id="admin-password-input" class="w-full bg-slate-950 border border-slate-700 rounded-lg p-3 text-white mb-4 outline-none text-center focus:border-emerald-500 transition" placeholder="Enter Password" onkeypress="if(event.key === 'Enter') checkAdminPassword()">
+            <div class="flex gap-3 justify-center">
+                <button onclick="closeAdminLogin()" class="px-5 py-2.5 bg-slate-800 hover:bg-slate-700 text-white font-medium rounded-lg transition w-full">Cancel</button>
+                <button onclick="checkAdminPassword()" class="px-5 py-2.5 bg-emerald-600 hover:bg-emerald-500 text-white font-bold rounded-lg transition shadow-lg w-full">Login</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- CHANGE PASSWORD MODAL -->
+    <div id="changePasswordModal" class="fixed inset-0 bg-black/95 backdrop-blur-md z-[70] flex items-center justify-center p-4 hidden">
+        <div class="bg-slate-900 border border-purple-500/50 rounded-xl max-w-sm w-full p-6 text-center shadow-[0_0_30px_rgba(168,85,247,0.3)] mac-modal-animate">
+            <div class="mac-dots mb-4 justify-center"><span class="mac-dot mac-dot-close"></span><span class="mac-dot mac-dot-minimize"></span><span class="mac-dot mac-dot-expand"></span></div>
+            <h3 class="text-white font-bold mb-4 text-lg"><i class="fa-solid fa-key text-purple-400"></i> Change Password</h3>
+            <input type="password" id="new-password-input" class="w-full bg-slate-950 border border-slate-700 rounded-lg p-3 text-white mb-4 outline-none text-center focus:border-purple-500 transition" placeholder="Enter New Password" onkeypress="if(event.key === 'Enter') saveNewPassword()">
+            <div class="flex gap-3 justify-center">
+                <button onclick="document.getElementById('changePasswordModal').classList.add('hidden')" class="px-5 py-2.5 bg-slate-800 hover:bg-slate-700 text-white font-medium rounded-lg transition w-full">Cancel</button>
+                <button onclick="saveNewPassword()" class="px-5 py-2.5 bg-purple-600 hover:bg-purple-500 text-white font-bold rounded-lg transition shadow-lg w-full">Save</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- LIGHTBOX FOR IMAGES -->
+    <div id="imageLightboxModal" class="fixed inset-0 bg-black/95 backdrop-blur-md z-[60] flex items-center justify-center p-4 hidden" onclick="closeImageLightbox()">
+        <div class="relative max-w-5xl w-full text-center mac-modal-animate" onclick="event.stopPropagation()">
+            <button onclick="closeImageLightbox()" class="absolute -top-12 sm:-top-10 right-0 text-white text-3xl sm:text-2xl hover:text-rose-400 transition"><i class="fa-solid fa-xmark"></i></button>
+            <img id="lightbox-img" src="" class="max-h-[75vh] sm:max-h-[85vh] mx-auto rounded-xl border border-slate-600 shadow-2xl object-contain">
+            <p id="lightbox-caption" class="text-xs text-slate-300 mt-3 font-medium text-glow"></p>
+            <p class="font-signature text-xl text-sky-400 mt-2 opacity-80">R.M. Wani</p>
+        </div>
+    </div>
+
+    <!-- HIGH-QUALITY PDF/DRAWING VIEWER MODAL -->
+    <div id="drawingModal" class="fixed inset-0 bg-black/95 backdrop-blur-md z-[60] flex items-center justify-center p-2 sm:p-4 hidden">
+        <div class="bg-slate-900 border border-sky-600/50 rounded-2xl max-w-6xl w-full max-h-[95vh] flex flex-col overflow-hidden shadow-[0_0_30px_rgba(2,132,199,0.3)] mac-modal-animate">
+            <div class="px-4 sm:px-6 py-3 sm:py-4 border-b border-slate-700 flex justify-between items-center bg-slate-950">
+                <div class="flex items-center gap-3 overflow-hidden pr-2">
+                    <div class="mac-dots shrink-0"><span class="mac-dot mac-dot-close" onclick="closeDrawingModal()"></span><span class="mac-dot mac-dot-minimize"></span><span class="mac-dot mac-dot-expand"></span></div>
+                    <div><span id="modal-sheet-number" class="text-[10px] sm:text-xs font-mono text-sky-400 block whitespace-nowrap overflow-hidden text-ellipsis">Document Viewer</span><h3 id="modal-title" class="text-sm sm:text-lg font-bold text-white whitespace-nowrap overflow-hidden text-ellipsis">TITLE</h3></div>
+                </div>
+                <button onclick="closeDrawingModal()" class="text-slate-400 hover:text-rose-400 text-2xl shrink-0"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="p-4 sm:p-6 overflow-y-auto space-y-4 sm:space-y-6 blueprint-bg flex-grow">
+                <div id="modal-media-container" class="rounded-xl border border-sky-500/50 bg-slate-950 p-1 text-center h-[40vh] sm:h-[60vh] flex items-center justify-center overflow-hidden shadow-inner relative"></div>
+                
+                <div id="modal-specs-grid" class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 text-xs">
+                    <div class="bg-slate-900/90 border border-slate-700 rounded-xl p-4"><h4 id="modal-doors-label" class="font-bold text-sky-400 mb-2 border-b border-slate-700 pb-1">DOOR / COMPONENT SCHEDULE</h4><div id="modal-door-schedule" class="space-y-1 text-slate-300"></div></div>
+                    <div class="bg-slate-900/90 border border-slate-700 rounded-xl p-4"><h4 id="modal-walls-label" class="font-bold text-emerald-400 mb-2 border-b border-slate-700 pb-1">WALL / MATERIAL SCHEDULE</h4><div id="modal-wall-schedule" class="space-y-1 text-slate-300"></div></div>
+                </div>
+                <div class="bg-slate-900/90 border border-slate-700 rounded-xl p-4 text-xs flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                    <div class="flex-grow">
+                        <h4 class="font-bold text-amber-400 mb-1">EXTRACTED DETAILS & SCOPE</h4>
+                        <div id="modal-description" class="text-slate-300"></div>
+                    </div>
+                    <div class="text-right sm:border-l border-slate-600 sm:pl-4 shrink-0 w-full sm:w-auto border-t sm:border-t-0 pt-2 sm:pt-0"><p class="font-signature text-3xl text-sky-400">Rasiq Wani</p></div>
+                </div>
+            </div>
+            <div class="px-4 sm:px-6 py-3 bg-slate-950 border-t border-slate-700 flex justify-between items-center">
+                <span class="text-[8px] sm:text-[10px] text-slate-500 font-mono tracking-widest hidden sm:inline">© 2026 OFFICIAL BIM DOCUMENT</span>
+                <button onclick="closeDrawingModal()" class="w-full sm:w-auto px-5 py-2.5 rounded bg-rose-600 hover:bg-rose-500 text-white text-xs font-bold transition">Close Viewer</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- DYNAMIC ADD/EDIT FORM MODAL -->
+    <div id="formModal" class="fixed inset-0 bg-black/90 backdrop-blur-md z-[60] flex items-center justify-center p-2 sm:p-4 hidden">
+        <div class="bg-slate-900 border border-emerald-500/50 rounded-2xl max-w-lg w-full p-4 sm:p-6 shadow-2xl overflow-y-auto max-h-[95vh] mac-modal-animate">
+            <div class="flex justify-between items-center mb-4 border-b border-slate-700 pb-3">
+                <div class="flex items-center gap-3">
+                    <div class="mac-dots"><span class="mac-dot mac-dot-close" onclick="closeFormModal()"></span><span class="mac-dot mac-dot-minimize"></span><span class="mac-dot mac-dot-expand"></span></div>
+                    <h3 id="form-modal-title" class="text-lg font-bold text-emerald-400">Add Item</h3>
+                </div>
+                <button onclick="closeFormModal()" class="text-slate-400 hover:text-white text-xl"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <form id="dynamic-form" onsubmit="handleFormSubmit(event)" class="space-y-4 text-xs">
+                <input type="hidden" id="form-type"><input type="hidden" id="form-index">
+                
+                <div>
+                    <label class="block text-sky-400 font-bold mb-1"><i class="fa-solid fa-sliders text-amber-400 mr-1"></i> PDF Data Extraction Mode</label>
+                    <select id="pdf-extract-mode" class="w-full bg-slate-950 border border-slate-600 rounded p-2.5 text-white outline-none focus:border-sky-500 cursor-pointer font-medium">
+                        <option value="auto">✨ Automatic Extraction (Parse PDF, Schedules & Populate Fields)</option>
+                        <option value="manual">✍️ Manual Entry (Attach File, Type Fields Yourself)</option>
+                        <option value="unchanged">🔒 Keep Unchanged (Attach File, Preserve Current Text & Schedules)</option>
+                    </select>
+                </div>
+
+                <div><label class="block text-slate-300 mb-1 font-medium">Title / Sheet Number</label><input type="text" id="form-title" required class="w-full bg-slate-950 border border-slate-600 rounded p-2.5 text-white outline-none focus:border-sky-500 transition"></div>
+                <div><label class="block text-slate-300 mb-1 font-medium">Subtitle / Company / Location</label><input type="text" id="form-subtitle" required class="w-full bg-slate-950 border border-slate-600 rounded p-2.5 text-white outline-none focus:border-sky-500 transition"></div>
+                
+                <div id="drawing-schedules-container" class="grid grid-cols-1 sm:grid-cols-2 gap-3 p-3 bg-slate-950/80 rounded-lg border border-slate-800">
+                    <div>
+                        <label id="form-doors-label" class="block text-sky-400 font-bold mb-1">Door / Rebar Schedule (Comma separated)</label>
+                        <input type="text" id="form-doors-schedule" placeholder="e.g. 02: Semi Solid Flush, GL-41: Sliding Door" class="w-full bg-slate-900 border border-slate-700 rounded p-2 text-white outline-none">
+                    </div>
+                    <div>
+                        <label id="form-walls-label" class="block text-emerald-400 font-bold mb-1">Wall / Concrete Schedule (Comma separated)</label>
+                        <input type="text" id="form-walls-schedule" placeholder="e.g. 01: Insulated Block (250mm), AAC Block (100mm)" class="w-full bg-slate-900 border border-slate-700 rounded p-2 text-white outline-none">
+                    </div>
+                </div>
+
+                <div id="exp-dates-container" class="grid grid-cols-1 sm:grid-cols-2 gap-3 p-3 bg-slate-950/80 rounded-lg border border-slate-800">
+                    <div>
+                        <label class="block text-amber-400 font-bold mb-1">Date of Joining</label>
+                        <input type="date" id="form-start-date" class="w-full bg-slate-900 border border-slate-700 rounded p-2 text-white outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-amber-400 font-bold mb-1">End Date</label>
+                        <input type="date" id="form-end-date" class="w-full bg-slate-900 border border-slate-700 rounded p-2 text-white outline-none">
+                    </div>
+                    <div class="sm:col-span-2 flex items-center gap-2 mt-1">
+                        <input type="checkbox" id="form-is-current" class="w-4 h-4 accent-emerald-500 cursor-pointer" onchange="toggleCurrentJobDates(this.checked)">
+                        <label for="form-is-current" class="text-emerald-400 font-bold cursor-pointer">Currently Working Here (Live Daily Day-by-Day Counter)</label>
+                    </div>
+                </div>
+
+                <div id="date-fallback-container"><label class="block text-slate-300 mb-1 font-medium">Scale / Date</label><input type="text" id="form-date" class="w-full bg-slate-950 border border-slate-600 rounded p-2.5 text-white outline-none focus:border-sky-500 transition"></div>
+                <div><label class="block text-sky-400 font-bold mb-1">Details & Description (HTML Enabled)</label><textarea id="form-description" rows="4" required class="w-full bg-slate-950 border border-slate-600 rounded p-2.5 text-white outline-none focus:border-sky-500 transition"></textarea></div>
+                
+                <div class="p-3 bg-blue-900/30 border border-blue-500/30 rounded-lg">
+                    <label class="block text-blue-300 mb-1 font-bold"><i class="fa-solid fa-file-pdf text-amber-400"></i> File Upload & Auto-Sync:</label>
+                    <p class="text-[10px] text-slate-300 mb-2 leading-relaxed">Selecting a file automatically normalizes its filename for 100% relative path code sync!</p>
+                    <div class="flex gap-2">
+                        <input type="text" id="form-image" placeholder="drawing.pdf or video.mp4" class="w-full bg-slate-950 border border-slate-600 rounded p-2 text-white font-mono text-[10px] outline-none">
+                        <label class="px-3 py-2 bg-sky-600 hover:bg-sky-500 text-white font-bold rounded cursor-pointer transition whitespace-nowrap flex items-center justify-center">
+                            Browse <input type="file" id="modal-file-picker" class="hidden" accept=".pdf,image/*,video/*" onchange="handleFileSelectWithPdfExtraction(this)">
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="flex flex-col-reverse sm:flex-row justify-end gap-2 pt-3 border-t border-slate-700">
+                    <button type="button" onclick="closeFormModal()" class="w-full sm:w-auto px-4 py-2.5 rounded bg-slate-800 text-slate-200 font-medium">Cancel</button>
+                    <button type="submit" class="w-full sm:w-auto px-4 py-2.5 rounded bg-emerald-600 text-white font-bold shadow-lg border border-emerald-400">Save & Confirm</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- EXHAUSTIVE DATA ENGINE & LOGIC -->
+    <script>
+        const DATA_VERSION = "2026_V13_CORRECTED_PDF_PREVIEWS";
+        let directoryHandle = null;
+
+        const defaultData = {
+            drawings: [
+                { sheetNo: "H1-BLA-SC-SD-AR-L01-15001-00", title: "HILL 01 BUILDING A - 1BA1 MASTERPLAN", scale: "1:25", date: "Dec 2025", description: "Architectural floor plan detailing Living/Dining, Master Bedroom, Kitchen, and Terrace layouts.", doors: ["02: Semi Solid Flush (1085x2223)", "03: Solid Flush Semi Solid (985x2223)", "GL-41A: WDW Sliding Door (2400x2400)"], walls: ["01: Insulated Blockwork (250mm)", "03: Solid Blockwork (250mm)", "05: AAC Block (100mm)"], image: "EDCG-H01-Z-ZZ-AR-00001-Sheet - H1-BLA-SC-SD-AR-L01-15001-00.pdf" },
+                { sheetNo: "H1-BLA-SC-SD-AR-L01-15002-00", title: "HILL 01 BUILDING A - 2BA1 MASTERPLAN", scale: "1:25", date: "Dec 2025", description: "Detailed 2BA1 masterplan features Balcony (3125mm width), Living/Dining (4000x3350mm), M.Bedroom 1 (3500mm), Laundry room, passage layout.", doors: ["02: Semi Solid Flush (1085x2223)", "GL-41: WDW Sliding (2400x2400)", "GL-28: WDW Balcony Door (1000x2400)"], walls: ["01: Insulated Blockwork (250mm)", "03A: Solid Blockwork (200mm)", "04A: Solid Blockwork (100mm)"], image: "EDCG-H01-Z-ZZ-AR-00001-Sheet - H1-BLA-SC-SD-AR-L01-15002-00.pdf" },
+                { sheetNo: "H1-BLA-SC-SD-AR-L01-15004-00", title: "HILL 01 BUILDING A - 2BB1 MASTERPLAN", scale: "1:25", date: "Dec 2025", description: "Structural/Architectural masterplan at +19.250m FFL elevation. Details master bedroom, dress room, laundry (LAUN), passage, living/dining (7520mm width), and balcony connections.", doors: ["02: Semi Solid Flush (1085x2223)", "04: Solid Flush Door (1140x2223)", "GL-41: WDW Sliding Door"], walls: ["01: Insulated Blockwork (250mm)", "03: Solid Blockwork (250mm)", "05: AAC Block (100mm)"], image: "EDCG-H01-Z-ZZ-AR-00001-Sheet - H1-BLA-SC-SD-AR-L01-15004-00.pdf" },
+                { sheetNo: "H1-BLA-SC-SD-AR-L01-15005-00", title: "HILL 01 BUILDING A - 2BB2 MASTERPLAN", scale: "1:25", date: "Dec 2025", description: "High-density residential layout featuring Living/Dining (8670mm), Kitchen, Dress room, G.Toilet, passage corridors, linear shower drains, and AAC partition blockwork.", doors: ["20: Semi Solid Flush (1085x2223)", "GL-42A: WDW Fixed Sliding Door (2000x2400)", "GL-28: Balcony Door"], walls: ["01: Insulated Blockwork (250mm)", "04: Solid Blockwork (150mm)", "05: AAC Block (100mm)"], image: "EDCG-H01-Z-ZZ-AR-00001-Sheet - H1-BLA-SC-SD-AR-L01-15005-00.pdf" },
+                { sheetNo: "H1-BLA-SC-SD-AR-L01-15006-00", title: "HILL 01 BUILDING A - 3BA1 MASTERPLAN", scale: "1:35", date: "Dec 2025", description: "Spacious 3-Bedroom Masterplan comprising M.Bedroom 1, Bedroom 2, Bedroom 3, Maid's Room with attached bath, multiple terraces, and shaft duct coordination.", doors: ["20: Semi Solid Flush (1085x2223)", "04: Solid Flush Door (1140x2223)", "GL-41: Sliding Door"], walls: ["01: Insulated Blockwork (250mm)", "03A: Solid Blockwork (200mm)", "04A: Solid Blockwork (100mm)"], image: "EDCG-H01-Z-ZZ-AR-00001-Sheet - H1-BLA-SC-SD-AR-L01-15006-00.pdf" },
+                { sheetNo: "H1-BLA-SC-SD-AR-L01-15007-00", title: "HILL 01 BUILDING A - 3BA2 MASTERPLAN", scale: "1:35", date: "Dec 2025", description: "Architectural floor plan with +19.175m kitchen floor levels, Maid's quarters, living area (6370mm), dress rooms, stone thresholds, and linear floor drains.", doors: ["20: Semi Solid Flush (1085x2223)", "03: Solid Flush (985x2223)", "GL-41: Sliding Door"], walls: ["01: Insulated Blockwork (250mm)", "04: Solid Blockwork (150mm)", "05: AAC Block (100mm)"], image: "EDCG-H01-Z-ZZ-AR-00001-Sheet - H1-BLA-SC-SD-AR-L01-15007-00.pdf" },
+                { sheetNo: "H1-BLA-SC-SD-AR-L01-15008-00", title: "HILL 01 BUILDING A - 2BDXB1 MASTERPLAN", scale: "1:25", date: "Dec 2025", description: "Duplex masterplan unit with integrated staircase (STAIR), store room, laundry area, maid's room, kitchen (3500mm), and balcony connections.", doors: ["02: Semi Solid Flush (1085x2223)", "D30: Semi Solid Folding (950x2223)", "GL-42A: Fixed Sliding Door"], walls: ["01: Insulated Blockwork (250mm)", "03-A: Solid Blockwork (200mm)", "05: AAC Block (100mm)"], image: "EDCG-H01-Z-ZZ-AR-00001-Sheet - H1-BLA-SC-SD-AR-L01-15008-00.pdf" }
+            ],
+            structdrawings: [
+                { sheetNo: "ST-BLA-SC-SD-001-L01", title: "FOUNDATION RAFT & PILE CAP STRUCTURAL LAYOUT", scale: "1:50", date: "Dec 2025", description: "Structural foundation slab layout detailing heavy pile cap reinforcement, tension anchor embeds, and core wall starter rebar splices.", doors: ["Rebar: Grade T40 @ 150mm c/c", "Concrete: C50/60 High Strength"], walls: ["Core Wall: 400mm Thickness", "Raft Slab: 1800mm Depth"], image: "EDCG-H01-Z-ZZ-AR-00001-Sheet - H1-BLA-SC-SD-AR-L01-15001-00.pdf" },
+                { sheetNo: "ST-BLA-SC-SD-002-L02", title: "SUPERSTRUCTURE TRANSFER SLAB & REBAR DETAIL", scale: "1:25", date: "Jan 2026", description: "Level 02 transfer plate reinforcement schedule, heavy shear links, post-tensioned tendon anchorages, and column lap splices.", doors: ["PT Tendons: 15.2mm Strands", "Stirrups: T12 @ 100mm c/c"], walls: ["Transfer Slab: 1200mm Thickness", "Columns: 800x800mm Reinforced"], image: "EDCG-H01-Z-ZZ-AR-00001-Sheet - H1-BLA-SC-SD-AR-L01-15002-00.pdf" }
+            ],
+            videos: [ 
+                { title: "Civil BIM Engineer Showcase & Walkthrough", location: "Dubai Marina High-Rise Project", period: "LOD 350 Model Animation", description: "3D structural and architectural Revit model walkthrough demonstrating multi-disciplinary coordination and clash resolution.", image: "project-video.mp4" } 
+            ],
+            workpdfs: [ 
+                { title: "Jabal Ali Masterplan Setup", subtitle: "AG Real Estate", date: "Dec 2025", description: "Complete level 1 architectural shop drawings.", file: "EDCG-H01-Z-ZZ-AR-00001-Sheet - H1-BLA-SC-SD-AR-L01-15001-00.pdf" } 
+            ],
+            docs: [ 
+                { title: "BIM Clash Resolution Matrix", subtitle: "Navisworks Report", date: "2026", description: "Interdisciplinary spatial coordination logs.", file: "clash-report.pdf" } 
+            ],
+            certificates: [ 
+                { title: "Autodesk Revit Structure", subtitle: "Koenig Solutions (Autodesk ATC)", date: "Ongoing", description: "Ongoing training covering project setup, structural framing (columns, beams, trusses, mat/isolated/strip foundations), 3D Rebar detailing (area, path, stirrups, ties, constraints, cover settings), central worksharing, custom parametric family creation, and IFC/DWG drawing exports etc.", file: "Revit_Cert.pdf" }, 
+                { title: "Certificate in QGIS (Geographic Information Systems)", subtitle: "IIT Bombay (Spoken Tutorial)", date: "Completed", description: "Mastered spatial data analysis, GIS mapping, georeferencing, vector/raster data integration, and terrain modeling for civil engineering site planning.", file: "QGIS_Cert.pdf" },
+                { title: "Professional Civil Engineering Design Software Certification", subtitle: "Borgward Technologies, Pune", date: "Completed", description: "Mastered AutoCAD, Revit (Architectural/Structural), Navisworks, ACC, ISO 19650 BIM Information Process Stages, ETABS, STAAD.Pro, Tekla Structures, 3Ds Max, and ABAQUS.", file: "Borgward_Cert.pdf" },
+                { title: "Advanced Diploma in Computer Applications (ADCA)", subtitle: "STP Computers, New Delhi", date: "Completed", description: "Proficient in computer software applications, hardware diagnostics, database entry, and office productivity tools.", file: "ADCA_Cert.pdf" },
+                { title: "Advanced BIM Automation Mastery", subtitle: "Self-Directed Tracks", date: "2026", description: "Dynamo Visual Programming, pyRevit, and SketchUp.", file: "BIM_Auto.pdf" }
+            ],
+            degrees: [ 
+                { title: "Bachelor of Engineering (B.E.) in Civil Engineering", subtitle: "Government College of Engineering & Research, Pune | SPPU", date: "Aug 2019 - Apr 2023", description: "CGPA: 7.9/10.0. Thesis: Exploring Lateral Load Resisting Ability of Steel Slitted Shear Walls Retrofitted with Moment Resisting Frame.", file: "BE_Degree.pdf" }, 
+                { title: "Diploma in Civil Engineering", subtitle: "KGP-J&K State Board of Technical Education, Srinagar", date: "Mar 2017 - Dec 2019", description: "Score: 69.6%.", file: "Diploma_Degree.pdf" },
+                { title: "10+2 Secondary Education", subtitle: "Jammu & Kashmir State Board of School Education, Srinagar", date: "Feb 2017", description: "Score: 69.4%.", file: "Secondary_Ed.pdf" }
+            ],
+            cvs: [ 
+                { title: "Official Civil BIM CV", subtitle: "Rasiq Mushtaq Wani", date: "2026 Version", description: "Complete professional background and engineering tools.", file: "Rasiq_Mushtaq_Wani_CV.pdf" } 
+            ],
+            projects: [ 
+                { title: "PG07-Public Parks & Garden with Underground Civilian Shelter Facilities", location: "Liwara 1, Ajman / Abu Dhabi, UAE", period: "Plot Area: 25,437 m²", description: "Modeled complex structural foundation slabs and underground protective civil structures using Revit & Navisworks Manage. Coordinated IFC models, executed interdisciplinary clash resolution, and produced structural shop drawings.", image: "" }, 
+                { title: "PG05 - Mohammad Bin Zayed-1908 Majlis Garden with Underground Protection Facilities", location: "Ajman, UAE", period: "Structural & Architectural Scope", description: "Executed detailed 3D structural modeling, rebar detailing, foundation coordination, and clash-free interdisciplinary BIM management.", image: "" },
+                { title: "Dubai Marina 3M High-Rise Residential Building", location: "Dubai, UAE", period: "LOD 350 Model", description: "Developed detailed Revit model for superstructure and architectural components flat-wise (LOD 350). Performed clash detection and coordination for complex transfer slab levels, contributed to Scan-to-BIM verification for foundation and core-wall alignment, produced fabrication-ready details for key structural connections, and managed model in BIM 360 environment.", image: "" },
+                { title: "Design & Drafting Projects", location: "Jammu & Kashmir, India", period: "Multiple Residential & School Sites", description: "Designed and drafted 2D plans/elevations for Guru Nanak School (Tral) and Residential Building (Srinagar). Created 3D Revit models for residential building at Srinagar and designed Pile Foundation at Srinagar.", image: "" },
+                { title: "Exploring Lateral Load Resisting Ability of Steel Slitted Shear Walls Retrofitted with Moment Resisting Frame", location: "Pune, India", period: "B.E. Thesis Project", description: "Executed finite element modeling using ABAQUS software. Performed Eigenvalue analysis, Nonlinear Pushover analysis, Incremental Dynamic analysis, and Cyclic Hysteretic load analysis to evaluate structural seismic behavior and energy dissipation.", image: "" }
+            ],
+            experiences: [ 
+                { title: "BIM Engineer", company: "START BIM ENGINEERING CONSULTING SERVICES LLC", location: "Abu Dhabi & Ajman Projects, UAE", startDate: "2025-08-01", endDate: "present", isCurrent: true, period: "Aug 2025 - Present", description: "<ul class='list-disc list-inside space-y-1 mt-2 text-slate-200'><li>Lead 3D BIM modeling and multi-disciplinary coordination for complex structural and architectural packages in Revit and Navisworks Manage following UAE building standards.</li><li>Managed and resolved 300+ interdisciplinary model issues weekly using Autodesk Issues Add-In, reducing spatial coordination cycle time by 15%.</li><li>Spearheaded Scan-to-BIM and CAD-to-BIM workflows, collaborating with multi-disciplinary teams to convert point cloud data and legacy 2D CAD drawings into intelligent 3D BIM models (LOD 100 to LOD 350) for architectural and structural domains.</li><li>Executed efficient 2D-to-3D conversions utilizing specialized add-ins, streamlining the modeling process and ensuring seamless transformation of legacy design documents.</li><li>Performed rigorous clash detection and spatial coordination using Navisworks Manage on international projects, identifying conflicts and issuing matrix reports to safeguard model integrity.</li><li>Generated fabrication-ready Structural Shop Drawings, detailed sheet sets, schedules, rebar placement details, and precise quantity take-offs (QTO) extracted directly from central models.</li><li>Spearheaded IFC drawing export and schema validation to maintain seamless design interoperability across GCC architectural, structural, and civil engineering teams.</li></ul>" }, 
+                { title: "QA/QC R&D Engineer", company: "GPS RMC", location: "Pune, Maharashtra, India", startDate: "2025-02-12", endDate: "2025-07-28", isCurrent: false, period: "Feb 2025 - Jul 2025", description: "<ul class='list-disc list-inside space-y-1 mt-2 text-slate-200'><li>Managed laboratory and field quality control operations, equipment calibration, and test result documentation with 100% compliance to IS/ASTM standards.</li><li>Formulated high-performance concrete recipes, design mixes, and introduced novel admixtures, boosting concrete quality/strength by 50% and improving concrete performance by 25%.</li><li>Implemented modern non-destructive material testing techniques, enhancing testing efficiency by 60% and assessment accuracy by 30%.</li></ul>" },
+                { title: "Lab Expert & In-Charge", company: "ARCO Cements", location: "Jammu & Kashmir, India", startDate: "2024-05-01", endDate: "2024-09-30", isCurrent: false, period: "May 2024 - Sep 2024", description: "<ul class='list-disc list-inside space-y-1 mt-2 text-slate-200'><li>Managed laboratory operations, equipment calibration, and test result documentation by 100%.</li><li>Supervised a team of 07 technicians to maintain consistency in cement formulation and physical/chemical testing.</li><li>Implemented modern testing techniques, improving accuracy in material assessment by 20% and increasing testing efficiency by 40%.</li></ul>" },
+                { title: "QA/QC Engineer (Promoted)", company: "SP Concare Pvt. Ltd. & CWC Chemicals Pvt. Ltd.", location: "Pune & Mumbai, Maharashtra, India", startDate: "2023-07-01", endDate: "2024-04-30", isCurrent: false, period: "Jul 2023 - Apr 2024", description: "<ul class='list-disc list-inside space-y-1 mt-2 text-slate-200'><li>Led quality assurance processes, ensuring 100% compliance with industry standards and structural project specifications.</li><li>Enhanced concrete mix designs to improve structural durability, reducing total material waste by 15% and reducing project delays by 10%.</li><li>Transformed testing procedures by implementing modern lab techniques, increasing overall testing efficiency by 20%.</li><li>Collaborated with cross-functional teams to identify and resolve construction defects on site.</li><li>Analyzed concrete test results from over 120 samples to identify quality control issues, implementing corrective measures that enhanced product integrity and structural reliability.</li></ul>" },
+                { title: "Department of R&D Trainee Engineer", company: "SP Concare Pvt. Ltd.", location: "Pune, Maharashtra, India", startDate: "2023-07-01", endDate: "2023-07-31", isCurrent: false, period: "Jul 2023", description: "<ul class='list-disc list-inside space-y-1 mt-2 text-slate-200'><li>Assisted in research and development of advanced construction chemicals, improving product performance by 15%.</li><li>Supported senior engineers in quality control and product formulation improvements by 100%, preparing 17 technical reports and documentation for R&D findings.</li><li>Optimized concrete mix designs, reducing material costs by 10% while contributing to a 20% improvement in product consistency and durability.</li></ul>" },
+                { title: "Graduate BIM Engineer Intern", company: "Borgward Technologies", location: "Pune, Maharashtra, India", startDate: "2023-04-01", endDate: "2024-10-31", isCurrent: false, period: "Apr 2023 - Oct 2024", description: "<ul class='list-disc list-inside space-y-1 mt-2 text-slate-200'><li>Supported the development and detailing of 3D structural (Concrete, Steel, Precast, Rebar) and architectural models in Revit as per ISO 19650 information process stages.</li><li>Assisted in the extraction of comprehensive 2D structural CAD sets, drawing sheets, schedules, and material take-offs (QTO) from BIM models.</li><li>Contributed to clash detection running preliminary Navisworks reports and performed routine model maintenance tasks including custom family (component) creation, view template setup, and sheet organization.</li><li>Gained practical experience applying Level of Development (LOD) specifications and participated in project coordination meetings, documenting action items.</li></ul>" },
+                { title: "PWD R&B Intern", company: "PWD R&B", location: "Jammu & Kashmir, India", startDate: "2022-03-01", endDate: "2022-05-31", isCurrent: false, period: "Mar 2022 - May 2022", description: "<ul class='list-disc list-inside space-y-1 mt-2 text-slate-200'><li>Understood structural design and detailing of building construction and RC framed structures.</li></ul>" },
+                { title: "PWD R&B Intern", company: "PWD R&B", location: "Jammu & Kashmir, India", startDate: "2020-11-01", endDate: "2021-01-31", isCurrent: false, period: "Nov 2020 - Jan 2021", description: "<ul class='list-disc list-inside space-y-1 mt-2 text-slate-200'><li>Understood design, detailing, and driving of Pile foundations and RC framed structures.</li></ul>" }
+            ]
+        };
+
+        const quotes = [
+            { text: "\"And He found you lost and guided you.\"", author: "Quran 93:7", color: "emerald" },
+            { text: "\"Indeed, with hardship [will be] ease.\"", author: "Quran 94:6", color: "sky" },
+            { text: "\"Engineering is the closest thing to magic that exists in the world.\"", author: "Elon Musk", color: "amber" },
+            { text: "\"So verily, with the hardship, there is relief.\"", author: "Quran 94:5", color: "purple" }
+        ];
+
+        let portfolioData = {};
+        let currentSlideIndex = 0;
+        let currentStructSlideIndex = 0;
+        let isCarouselPlaying = true;
+        let isStructCarouselPlaying = true;
+        let carouselInterval = null;
+        let structCarouselInterval = null;
+        let isAdminMode = false;
+        let quoteIndex = 0;
+
+        function getAdminPassword() {
+            return localStorage.getItem('rasiq_admin_pass') || "335686";
+        }
+
+        function openAdminLogin() {
+            if (isAdminMode) return;
+            document.getElementById('admin-password-input').value = '';
+            document.getElementById('adminLoginModal').classList.remove('hidden');
+            setTimeout(() => document.getElementById('admin-password-input').focus(), 100);
+        }
+
+        function closeAdminLogin() {
+            document.getElementById('adminLoginModal').classList.add('hidden');
+        }
+
+        function checkAdminPassword() {
+            const input = document.getElementById('admin-password-input').value;
+            if (input === getAdminPassword()) {
+                toggleAdminMode();
+                closeAdminLogin();
+                showToast("Admin Unlocked!");
+            } else {
+                alert("Incorrect Password!");
+                document.getElementById('admin-password-input').value = '';
+            }
+        }
+
+        function toggleAdminMode() {
+            isAdminMode = !isAdminMode;
+            document.getElementById('admin-banner').classList.toggle('hidden', !isAdminMode);
+            document.querySelectorAll('.admin-only').forEach(el => el.classList.toggle('hidden', !isAdminMode));
+            if(!isAdminMode) showToast("Admin Locked");
+            renderAll();
+        }
+
+        function openChangePassword() {
+            document.getElementById('new-password-input').value = '';
+            document.getElementById('changePasswordModal').classList.remove('hidden');
+            setTimeout(() => document.getElementById('new-password-input').focus(), 100);
+        }
+
+        function saveNewPassword() {
+            const newPass = document.getElementById('new-password-input').value;
+            if(newPass.trim() === '') { alert('Password cannot be empty'); return; }
+            localStorage.setItem('rasiq_admin_pass', newPass);
+            document.getElementById('changePasswordModal').classList.add('hidden');
+            showToast('Password Changed Successfully!');
+        }
+
+        async function connectProjectFolder() {
+            if ('showDirectoryPicker' in window) {
+                try {
+                    directoryHandle = await window.showDirectoryPicker({ mode: 'readwrite' });
+                    const btn = document.getElementById('folder-connect-btn');
+                    if (btn) {
+                        btn.innerHTML = `<i class="fa-solid fa-folder-check text-emerald-400 mr-1"></i> Connected: ${directoryHandle.name}`;
+                        btn.className = "px-3 py-1.5 rounded bg-emerald-900/90 text-emerald-300 font-bold border border-emerald-500 shadow-md";
+                    }
+                    showToast(`Connected to Folder: ${directoryHandle.name}`);
+                } catch (err) {
+                    console.warn("Folder picker cancelled or unsupported", err);
+                }
+            } else {
+                alert("Direct Folder Sync is supported in Chrome or Edge. On other browsers, files will automatically trigger 1-click downloads with exact code filenames!");
+            }
+        }
+
+        function logVisitorActivity(actionType, details = {}) {
+            try {
+                let logs = JSON.parse(localStorage.getItem('rasiq_visitor_logs') || '[]');
+                const now = new Date();
+                const dateTimeStr = now.toLocaleDateString('en-US', {month:'short', day:'2-digit', year:'numeric'}) + ' ' + now.toLocaleTimeString('en-US', {hour:'2-digit', minute:'2-digit'});
+                
+                const logEntry = {
+                    id: Date.now(),
+                    dateTime: dateTimeStr,
+                    name: details.name || "Anonymous Recruiter / Visitor",
+                    phone: details.phone || "N/A",
+                    company: details.company || "N/A",
+                    email: details.email || "N/A",
+                    cvChecked: details.cvChecked || (actionType.includes("CV") ? "Yes" : "No"),
+                    action: actionType
+                };
+                
+                logs.unshift(logEntry);
+                localStorage.setItem('rasiq_visitor_logs', JSON.stringify(logs.slice(0, 100)));
+            } catch(e) { console.warn("Visitor log error:", e); }
+        }
+
+        function openVisitorLogModal() {
+            const tbody = document.getElementById('visitor-log-table-body');
+            const logs = JSON.parse(localStorage.getItem('rasiq_visitor_logs') || '[]');
+            
+            if (logs.length === 0) {
+                tbody.innerHTML = `<tr><td colspan="8" class="text-center text-slate-500 py-6 italic">No visitor logs recorded yet. Interacting with forms or CV will auto-populate this Excel sheet.</td></tr>`;
+            } else {
+                tbody.innerHTML = logs.map((log, idx) => `
+                    <tr class="hover:bg-slate-800/60 transition font-mono">
+                        <td class="text-slate-400 font-bold">${idx + 1}</td>
+                        <td class="whitespace-nowrap text-slate-300">${log.dateTime}</td>
+                        <td class="font-bold text-sky-300">${log.name}</td>
+                        <td class="text-emerald-400">${log.phone}</td>
+                        <td class="text-slate-200">${log.company}</td>
+                        <td class="text-sky-400">${log.email}</td>
+                        <td class="text-center font-bold ${log.cvChecked === 'Yes' ? 'text-emerald-400' : 'text-slate-500'}">${log.cvChecked}</td>
+                        <td class="text-slate-300">${log.action}</td>
+                    </tr>
+                `).join('');
+            }
+            document.getElementById('visitorLogModal').classList.remove('hidden');
+        }
+
+        function closeVisitorLogModal() { document.getElementById('visitorLogModal').classList.add('hidden'); }
+
+        function exportVisitorLogCSV() {
+            const logs = JSON.parse(localStorage.getItem('rasiq_visitor_logs') || '[]');
+            if (logs.length === 0) { alert("No logs to export!"); return; }
+            
+            let csv = "Index,Date_Time,Visitor_Name,Contact_Phone,Company_Name,Email_Address,CV_Checked,Action_Details\n";
+            logs.forEach((log, idx) => {
+                csv += `"${idx + 1}","${log.dateTime}","${log.name}","${log.phone}","${log.company}","${log.email}","${log.cvChecked}","${log.action}"\n`;
+            });
+
+            const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+            saveAs(blob, "Rasiq_Wani_Portfolio_Visitor_Log.csv");
+            showToast("Exported Visitor Log Excel (.CSV)!");
+        }
+
+        function getDynamicExpPeriod(exp) {
+            if (!exp.startDate) return exp.period || "";
+            const start = new Date(exp.startDate);
+            const isCurrent = exp.isCurrent || exp.endDate === 'present' || !exp.endDate;
+            
+            if (isCurrent) {
+                const now = new Date();
+                let yrs = now.getFullYear() - start.getFullYear();
+                let mos = now.getMonth() - start.getMonth();
+                let days = now.getDate() - start.getDate();
+                
+                if (days < 0) {
+                    mos -= 1;
+                    const prevMonth = new Date(now.getFullYear(), now.getMonth(), 0);
+                    days += prevMonth.getDate();
+                }
+                if (mos < 0) {
+                    yrs -= 1;
+                    mos += 12;
+                }
+                
+                let durationParts = [];
+                if (yrs > 0) durationParts.push(`${yrs} Yr${yrs > 1 ? 's' : ''}`);
+                if (mos > 0) durationParts.push(`${mos} Mo${mos > 1 ? 's' : ''}`);
+                durationParts.push(`${days} Day${days !== 1 ? 's' : ''}`);
+                
+                const startStr = start.toLocaleDateString('en-US', {month:'short', year:'numeric'});
+                return `${startStr} – Present (${durationParts.join(', ')})`;
+            } else {
+                const end = new Date(exp.endDate);
+                let totalMonths = (end.getFullYear() - start.getFullYear()) * 12 + (end.getMonth() - start.getMonth());
+                if (end.getDate() >= start.getDate()) totalMonths += 1;
+                
+                let roundedMonths = Math.max(6, Math.round(totalMonths / 6) * 6);
+                let roundedYrs = Math.floor(roundedMonths / 12);
+                let remMos = roundedMonths % 12;
+                
+                let roundedStr = "";
+                if (roundedYrs > 0 && remMos > 0) roundedStr = `${roundedYrs} Yr${roundedYrs > 1 ? 's' : ''} 6 Mos`;
+                else if (roundedYrs > 0) roundedStr = `${roundedYrs} Yr${roundedYrs > 1 ? 's' : ''}`;
+                else roundedStr = `6 Months`;
+                
+                const startStr = start.toLocaleDateString('en-US', {month:'short', year:'numeric'});
+                const endStr = end.toLocaleDateString('en-US', {month:'short', year:'numeric'});
+                return `${startStr} – ${endStr} (~${roundedStr})`;
+            }
+        }
+
+        function toggleCurrentJobDates(checked) {
+            const endDateInput = document.getElementById('form-end-date');
+            if(endDateInput) {
+                endDateInput.disabled = checked;
+                if(checked) endDateInput.value = '';
+            }
+        }
+
+        let isMobileMenuOpen = false;
+        function toggleMobileMenu() {
+            isMobileMenuOpen = !isMobileMenuOpen;
+            const sidebar = document.getElementById('sidebar-nav');
+            const overlay = document.getElementById('mobile-overlay');
+            if (isMobileMenuOpen) {
+                sidebar.classList.remove('-translate-x-full');
+                overlay.classList.remove('hidden');
+            } else {
+                sidebar.classList.add('-translate-x-full');
+                overlay.classList.add('hidden');
+            }
+        }
+
+        setInterval(() => {
+            quoteIndex = (quoteIndex + 1) % quotes.length;
+            const q = quotes[quoteIndex];
+            document.getElementById('quote-text').innerText = q.text;
+            document.getElementById('quote-author').innerText = `- ${q.author}`;
+            document.getElementById('quote-author').className = `text-xs sm:text-sm font-bold text-${q.color}-400 font-mono tracking-widest uppercase mt-4`;
+        }, 8000);
+
+        function showToast(msg) {
+            const t = document.getElementById('toast-container');
+            document.getElementById('toast-msg').innerText = msg;
+            t.classList.remove('translate-y-24', 'opacity-0');
+            setTimeout(() => { t.classList.add('translate-y-24', 'opacity-0'); }, 3000);
+        }
+
+        function updateLiveClock() {
+            const now = new Date();
+            const ops = { weekday: 'short', day: '2-digit', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true };
+            const timeStr = now.toLocaleString('en-US', ops);
+            
+            const clockEl = document.getElementById('live-clock');
+            const clockElMob = document.getElementById('live-clock-mobile');
+            if(clockEl) clockEl.innerText = timeStr;
+            if(clockElMob) clockElMob.innerText = now.toLocaleTimeString('en-US', {hour: '2-digit', minute: '2-digit', hour12: true});
+            
+            const sdContainer = document.getElementById('special-day-container');
+            if (now.getDay() === 5 && sdContainer) { sdContainer.classList.remove('hidden'); document.getElementById('special-day-text').innerText = "Jummah Mubarak!"; } 
+            else if(sdContainer) { sdContainer.classList.add('hidden'); }
+        }
+        setInterval(updateLiveClock, 1000);
+
+        function setupSeasonalVideo() {
+            const m = new Date().getMonth(); 
+            let f = "video-summer.mp4";
+            if(m>=2 && m<=4) f="video-spring.mp4";
+            else if(m>=5 && m<=7) f="video-summer.mp4";
+            else if(m>=8 && m<=10) f="video-autumn.mp4";
+            else f="video-winter.mp4";
+            
+            const selector = document.getElementById('season-selector');
+            if(selector) selector.value = "auto";
+            playBgVideo(f);
+        }
+
+        function forceSeason(val) {
+            if(val === "auto") { setupSeasonalVideo(); return; }
+            playBgVideo(val);
+            showToast("Theme updated!");
+        }
+
+        function playBgVideo(file) {
+            const v = document.getElementById('bg-video-element');
+            const src = document.getElementById('bg-video-source');
+            if(v && src) { 
+                src.src = file; 
+                v.load(); 
+                const playPromise = v.play();
+                if (playPromise !== undefined) {
+                    playPromise.then(_ => { v.classList.remove('hidden'); })
+                    .catch(e => { console.log("Autoplay blocked. Falling back to background image."); });
+                }
+            }
+        }
+
+        function loadPortfolioData() {
+            try {
+                const saved = localStorage.getItem('rasiq_portfolio_data');
+                const savedVer = localStorage.getItem('rasiq_portfolio_version');
+                
+                if (saved && savedVer === DATA_VERSION) { 
+                    portfolioData = JSON.parse(saved); 
+                } else { 
+                    portfolioData = JSON.parse(JSON.stringify(defaultData)); 
+                    try { 
+                        localStorage.setItem('rasiq_portfolio_data', JSON.stringify(portfolioData));
+                        localStorage.setItem('rasiq_portfolio_version', DATA_VERSION); 
+                    } catch(e) { console.warn("Storage write blocked by browser context."); }
+                }
+            } catch(e) {
+                console.warn("Storage read blocked by Edge/Browser security settings. Using default data.", e);
+                portfolioData = JSON.parse(JSON.stringify(defaultData));
+            }
+        }
+
+        function savePortfolioData() { 
+            try {
+                localStorage.setItem('rasiq_portfolio_data', JSON.stringify(portfolioData)); 
+                localStorage.setItem('rasiq_portfolio_version', DATA_VERSION);
+                renderAll(); 
+            } catch (e) {
+                alert("Storage Limit or Security Exception in Browser! Local file edits may not save permanently unless hosted on a server.");
+                loadPortfolioData();
+            }
+        }
+        
+        function resetDataToDefault() { 
+            if (confirm("Reset data to original default?")) { 
+                try { localStorage.removeItem('rasiq_portfolio_data'); localStorage.removeItem('rasiq_portfolio_version'); } catch(e){}
+                portfolioData = JSON.parse(JSON.stringify(defaultData)); 
+                renderAll(); 
+                showToast("Reset to Default!"); 
+            } 
+        }
+
+        async function exportMediaZip() {
+            if (typeof JSZip === 'undefined' || typeof saveAs === 'undefined') {
+                alert("ZIP exporter libraries are loading. Please check internet connection.");
+                return;
+            }
+            showToast("Preparing Media ZIP...");
+            try {
+                const zip = new JSZip();
+                const mediaFolder = zip.folder("portfolio_media");
+                let embeddedCount = 0;
+                let manifestText = "RASIQ MUSHTAQ WANI - PORTFOLIO MEDIA MANIFEST\n";
+                manifestText += "=========================================\n\n";
+
+                const collections = ['drawings', 'structdrawings', 'workpdfs', 'docs', 'certificates', 'degrees', 'cvs', 'videos', 'projects'];
+                
+                collections.forEach(col => {
+                    const items = portfolioData[col] || [];
+                    items.forEach((item, idx) => {
+                        const url = item.image || item.file;
+                        const title = item.title || item.sheetNo || `${col}_${idx+1}`;
+                        if (!url) return;
+
+                        if (url.startsWith('data:')) {
+                            const matches = url.match(/^data:(.+);base64,(.+)$/);
+                            if (matches) {
+                                const mime = matches[1];
+                                const base64Data = matches[2];
+                                let ext = 'bin';
+                                if (mime.includes('pdf')) ext = 'pdf';
+                                else if (mime.includes('png')) ext = 'png';
+                                else if (mime.includes('jpeg') || mime.includes('jpg')) ext = 'jpg';
+                                else if (mime.includes('mp4')) ext = 'mp4';
+                                
+                                const safeName = title.replace(/[^a-zA-Z0-9_-]/g, '_');
+                                const filename = `${col}_${idx + 1}_${safeName}.${ext}`;
+                                mediaFolder.file(filename, base64Data, {base64: true});
+                                embeddedCount++;
+                                manifestText += `[EMBEDDED FILE EXPORTED]: ${filename} (${mime})\n`;
+                            }
+                        } else {
+                            manifestText += `[FOLDER REFERENCE]: ${url} (Collection: ${col} | Title: ${title})\n`;
+                        }
+                    });
+                });
+
+                zip.file("README_MANIFEST.txt", manifestText);
+
+                const content = await zip.generateAsync({type: "blob"});
+                saveAs(content, "Rasiq_Wani_Portfolio_Media_Backup.zip");
+                showToast(`Exported ${embeddedCount} embedded files + Manifest ZIP!`);
+            } catch (err) {
+                console.error(err);
+                alert("Error generating ZIP backup: " + err.message);
+            }
+        }
+
+        async function handleFileSelectWithPdfExtraction(input) {
+            if (!input.files || !input.files[0]) return;
+            const file = input.files[0];
+            const mode = document.getElementById('pdf-extract-mode').value;
+            const formType = document.getElementById('form-type').value;
+            
+            const cleanFileName = file.name.replace(/\s+/g, '_');
+            document.getElementById('form-image').value = cleanFileName;
+
+            if (directoryHandle) {
+                try {
+                    const newFileHandle = await directoryHandle.getFileHandle(cleanFileName, { create: true });
+                    const writable = await newFileHandle.createWritable();
+                    await writable.write(file);
+                    await writable.close();
+                    showToast(`Auto-Saved '${cleanFileName}' to Connected Folder!`);
+                } catch (e) {
+                    console.warn("Direct folder save fallback:", e);
+                    saveAs(file, cleanFileName);
+                }
+            } else {
+                saveAs(file, cleanFileName);
+                showToast(`Downloading '${cleanFileName}' into project folder...`);
+            }
+
+            if (mode === 'unchanged') return;
+            if (mode === 'manual') return;
+
+            if (mode === 'auto' && file.name.toLowerCase().endsWith('.pdf') && typeof pdfjsLib !== 'undefined') {
+                showToast("Extracting PDF Data & Schedules...");
+                try {
+                    const arrayBuffer = await file.arrayBuffer();
+                    const pdf = await pdfjsLib.getDocument({ data: arrayBuffer }).promise;
+                    let fullText = "";
+                    
+                    const maxPages = Math.min(pdf.numPages, 3);
+                    for (let i = 1; i <= maxPages; i++) {
+                        const page = await pdf.getPage(i);
+                        const textContent = await page.getTextContent();
+                        fullText += " " + textContent.items.map(item => item.str).join(' ');
+                    }
+                    
+                    fullText = fullText.replace(/\s+/g, ' ').trim();
+                    
+                    let sheetMatch = fullText.match(/([A-Z0-9]{2,}-[A-Z0-9-]{5,})/i) || fullText.match(/Sheet\s*(?:No\.?)?\s*:?\s*([A-Z0-9_-]+)/i);
+                    let sheetNo = sheetMatch ? sheetMatch[1] : cleanFileName.replace('.pdf', '');
+
+                    let scaleMatch = fullText.match(/Scale\s*:?\s*(1:\d+)/i) || fullText.match(/(1:\d{2,3})/);
+                    let scale = scaleMatch ? scaleMatch[1] : "1:25";
+
+                    let titleMatch = fullText.match(/Title\s*:?\s*([^.\n\r]{5,40})/i) || fullText.match(/(?:PLAN|DRAWING|LAYOUT|DETAIL|MASTERPLAN|STRUCTURAL|FOUNDATION|REBAR)[^.\n\r]{3,40}/i);
+                    let title = titleMatch ? titleMatch[0].trim() : cleanFileName.replace('.pdf', '').replace(/_/g, ' ');
+
+                    let extractedDoors = [];
+                    let extractedWalls = [];
+
+                    if (formType === 'structdrawing' || fullText.match(/rebar|reinforcement|concrete|raft|pile|column|beam|transfer/i)) {
+                        let rebarMatches = fullText.match(/(?:T\d{2}|Grade\s*[A-Z0-9]+|\d+mm\s*c\/c|Stirrups|PT\s*Tendons|Mesh)[^.,;]{3,35}/gi);
+                        if (rebarMatches) extractedDoors = [...new Set(rebarMatches)].slice(0, 4).map(s => s.trim());
+                        
+                        let concMatches = fullText.match(/(?:C\d{2}\/\d{2}|Concrete|Raft|Pile\s*Cap|Slab|Core\s*Wall|Column|Beam)[^.,;]{3,35}/gi);
+                        if (concMatches) extractedWalls = [...new Set(concMatches)].slice(0, 4).map(s => s.trim());
+                    } else {
+                        let doorMatches = fullText.match(/(?:Door|Flush|Sliding|GL-\d+|D\d+|\d+x\d+)[^.,;]{3,35}/gi);
+                        if (doorMatches) extractedDoors = [...new Set(doorMatches)].slice(0, 4).map(s => s.trim());
+
+                        let wallMatches = fullText.match(/(?:Blockwork|AAC|Insulated|Solid\s*Block|\d+mm\s*Block)[^.,;]{3,35}/gi);
+                        if (wallMatches) extractedWalls = [...new Set(wallMatches)].slice(0, 4).map(s => s.trim());
+                    }
+
+                    if (extractedDoors.length === 0) {
+                        extractedDoors = (formType === 'structdrawing') 
+                            ? ["Rebar: High Yield Grade T40 / T16", "Stirrups: T12 @ 150mm c/c"] 
+                            : ["02: Semi Solid Flush (1085x2223)", "GL-41: Sliding Door (2400x2400)"];
+                    }
+                    if (extractedWalls.length === 0) {
+                        extractedWalls = (formType === 'structdrawing') 
+                            ? ["Concrete: C50/60 High Strength RC", "Core Wall / Raft Slab Framing"] 
+                            : ["01: Insulated Blockwork (250mm)", "05: AAC Partition Block (100mm)"];
+                    }
+
+                    let autoDesc = `Auto-Extracted Data:\n• Structural/Architectural Drawing Specs Processed.\n\nProcessed Context: ${fullText.substring(0, 160)}...`;
+
+                    document.getElementById('form-title').value = sheetNo;
+                    document.getElementById('form-subtitle').value = title;
+                    document.getElementById('form-date').value = scale;
+                    document.getElementById('form-description').value = autoDesc;
+                    
+                    const doorsField = document.getElementById('form-doors-schedule');
+                    const wallsField = document.getElementById('form-walls-schedule');
+                    if (doorsField) doorsField.value = extractedDoors.join(', ');
+                    if (wallsField) wallsField.value = extractedWalls.join(', ');
+
+                    showToast("PDF Data & Schedules Auto-Extracted!");
+                } catch(e) {
+                    console.warn("PDF extraction note:", e);
+                }
+            }
+        }
+
+        function openImageLightbox(src, cap) { document.getElementById('lightbox-img').src=src; document.getElementById('lightbox-caption').innerText=cap; document.getElementById('imageLightboxModal').classList.remove('hidden'); }
+        function closeImageLightbox() { document.getElementById('imageLightboxModal').classList.add('hidden'); }
+
+        function sendWhatsAppMessage(e) {
+            e.preventDefault();
+            const n = document.getElementById('wa-name').value;
+            const s = document.getElementById('wa-subject').value;
+            const m = document.getElementById('wa-message').value;
+            
+            logVisitorActivity("WhatsApp Contact Message Sent", { name: n, company: s });
+            window.open(`https://wa.me/919797743321?text=Hello Rasiq,%0A%0AMy Name: ${encodeURIComponent(n)}%0ASubject: ${encodeURIComponent(s)}%0AMessage: ${encodeURIComponent(m)}`, '_blank');
+        }
+
+        function openDocumentViewer(collection, index) {
+            try {
+                const collArray = portfolioData[collection] || [];
+                if(collArray.length === 0) return;
+                
+                const item = collArray[index];
+                const title = item.title || "Document Viewer";
+                const fileUrl = item.image || item.file;
+                const desc = item.description || "No description provided.";
+                
+                logVisitorActivity(`Inspected ${collection.toUpperCase()} Document: ${title}`, { cvChecked: collection === 'cvs' ? "Yes" : "No" });
+
+                document.getElementById('modal-sheet-number').innerText = collection.toUpperCase().replace('S', '') + " VIEWER";
+                document.getElementById('modal-title').innerText = title;
+                document.getElementById('modal-description').innerHTML = desc;
+                
+                const cont = document.getElementById('modal-media-container');
+                if(!fileUrl) {
+                    cont.innerHTML = '<p class="text-slate-400">No media uploaded for this item.</p>';
+                } else if(fileUrl.toLowerCase().endsWith('.pdf') || fileUrl.startsWith('data:application/pdf')) {
+                    const encodedUrl = encodeURI(fileUrl);
+                    cont.innerHTML = `
+                        <div class="w-full h-full relative flex flex-col items-center justify-center">
+                            <embed src="${encodedUrl}" type="application/pdf" width="100%" height="100%" class="rounded-lg shadow-inner bg-slate-950">
+                            <div class="absolute top-2 right-2 bg-slate-900/90 border border-slate-700 px-3 py-1.5 rounded-lg shadow text-xs z-10">
+                                <a href="${encodedUrl}" target="_blank" class="text-sky-400 hover:underline font-bold flex items-center gap-1.5"><i class="fa-solid fa-arrow-up-right-from-square"></i> Open in New Tab</a>
+                            </div>
+                        </div>`;
+                } else {
+                    cont.innerHTML = `<img src="${encodeURI(fileUrl)}" class="max-h-full mx-auto rounded object-contain cursor-pointer" onclick="openImageLightbox('${encodeURI(fileUrl)}', '${title}')" onError="this.parentElement.innerHTML='<p class=\\'text-slate-400 p-8\\'>File missing or invalid link.</p>';">`;
+                }
+
+                if(collection === 'drawings' || collection === 'structdrawings') {
+                    document.getElementById('modal-specs-grid').classList.remove('hidden');
+                    const isStruct = collection === 'structdrawings';
+                    
+                    document.getElementById('modal-doors-label').innerText = isStruct ? "REBAR / COMPONENT SCHEDULE" : "DOOR / COMPONENT SCHEDULE";
+                    document.getElementById('modal-walls-label').innerText = isStruct ? "CONCRETE / ELEMENT SCHEDULE" : "WALL / MATERIAL SCHEDULE";
+
+                    document.getElementById('modal-door-schedule').innerHTML = item.doors && item.doors.length ? item.doors.map(x=>`<p>• ${x}</p>`).join('') : '<p class="text-slate-500 italic">No door/rebar schedule recorded.</p>';
+                    document.getElementById('modal-wall-schedule').innerHTML = item.walls && item.walls.length ? item.walls.map(x=>`<p>• ${x}</p>`).join('') : '<p class="text-slate-500 italic">No wall/concrete schedule recorded.</p>';
+                } else {
+                    document.getElementById('modal-specs-grid').classList.add('hidden');
+                }
+
+                document.getElementById('drawingModal').classList.remove('hidden');
+            } catch(e) { console.error("Error opening viewer", e); }
+        }
+        function closeDrawingModal() { document.getElementById('drawingModal').classList.add('hidden'); }
+
+        // ARCHITECTURAL CAROUSEL WITH VISIBLE PDF EMBED PREVIEWS
+        function renderCarousel() {
+            try {
+                const dwgs = portfolioData.drawings || [];
+                if (dwgs.length === 0) { document.getElementById('slide-preview-area').innerHTML = "<p class='text-white text-center'>No architectural drawings found.</p>"; return; }
+                
+                if (currentSlideIndex >= dwgs.length) currentSlideIndex = 0;
+                if (currentSlideIndex < 0) currentSlideIndex = dwgs.length - 1;
+                const item = dwgs[currentSlideIndex];
+
+                document.getElementById('slide-sheet-badge').innerText = "Sheet: " + (item.sheetNo || 'N/A');
+                document.getElementById('slide-title').innerText = item.title || 'Untitled';
+                document.getElementById('slide-subtitle').innerText = `Scale ${item.scale || 'N/A'} | Date: ${item.date || 'N/A'}`;
+                
+                const isPdf = item.image && (item.image.toLowerCase().endsWith('.pdf') || item.image.startsWith('data:application/pdf'));
+                
+                const mediaHTML = isPdf 
+                    ? `<div class="w-full h-[200px] sm:h-[240px] bg-slate-950 rounded-xl border border-sky-500/50 shadow-lg cursor-pointer overflow-hidden relative group" onclick="event.stopPropagation(); openDocumentViewer('drawings', ${currentSlideIndex})">
+                        <embed src="${encodeURI(item.image)}#toolbar=0&navpanes=0&scrollbar=0" type="application/pdf" width="100%" height="100%" class="pointer-events-none opacity-90">
+                        <div class="absolute inset-0 bg-transparent group-hover:bg-sky-950/20 transition flex items-end justify-center pb-2 z-10">
+                            <span class="px-2.5 py-1 rounded bg-sky-900/90 text-sky-200 text-[10px] font-bold shadow border border-sky-500/50"><i class="fa-solid fa-expand mr-1"></i> Click to Inspect Full PDF</span>
+                        </div>
+                       </div>`
+                    : `<img src="${encodeURI(item.image || '')}" class="max-h-[200px] sm:max-h-[240px] rounded object-contain border border-slate-600 shadow-lg cursor-pointer hover:border-sky-500 transition" onclick="event.stopPropagation(); openImageLightbox('${encodeURI(item.image || '')}', '${item.title || ''}')" onError="this.parentElement.innerHTML='<div class=\\'p-6 text-center text-slate-400 bg-slate-900 border border-slate-700 w-full\\'><i class=\\'fa-solid fa-file-pdf text-3xl text-rose-400 mb-2\\'></i><p class=\\'text-[10px]\\'>No Image/PDF. Upload required.</p></div>';">`;
+
+                document.getElementById('slide-preview-area').innerHTML = `
+                    <div class="flex flex-col md:flex-row items-center gap-4 sm:gap-6">
+                        <div class="w-full md:w-1/2 flex justify-center">${mediaHTML}</div>
+                        <div class="w-full md:w-1/2 text-xs space-y-3">
+                            <div class="p-3 bg-slate-900/80 rounded border border-slate-700/50"><span class="text-sky-400 font-bold block mb-1 text-glow">Extracted Details</span><p class="text-slate-200">${item.description || ''}</p></div>
+                            <div class="p-3 bg-slate-900/80 rounded border border-slate-700/50"><span class="text-emerald-400 font-bold block mb-1 text-glow">Doors Schedule</span><p class="text-slate-300">${item.doors ? item.doors.join(', ') : ''}</p></div>
+                        </div>
+                    </div>`;
+                document.getElementById('carousel-indicators').innerHTML = dwgs.map((_, i) => `<button onclick="goToSlide(${i})" class="w-2.5 h-2.5 rounded-full transition shadow-md ${i === currentSlideIndex ? 'bg-sky-400 w-6' : 'bg-slate-600'}"></button>`).join('');
+            } catch(e) { console.error("Error rendering carousel", e); }
+        }
+
+        function nextDrawing() { currentSlideIndex = (currentSlideIndex + 1) % (portfolioData.drawings?.length || 1); renderCarousel(); }
+        function prevDrawing() { currentSlideIndex = (currentSlideIndex - 1 + (portfolioData.drawings?.length || 1)) % (portfolioData.drawings?.length || 1); renderCarousel(); }
+        function goToSlide(i) { currentSlideIndex = i; renderCarousel(); }
+        function openCurrentSlideModal() { openDocumentViewer('drawings', currentSlideIndex); }
+
+        function toggleCarouselPlay() { 
+            isCarouselPlaying = !isCarouselPlaying; 
+            const btn = document.getElementById('carousel-play-btn');
+            if(btn) btn.innerHTML = isCarouselPlaying ? '<i class="fa-solid fa-pause"></i> Pause' : '<i class="fa-solid fa-play"></i> Play'; 
+            if(isCarouselPlaying) startCarouselTimer(); 
+            else clearInterval(carouselInterval); 
+        }
+        function startCarouselTimer() { 
+            clearInterval(carouselInterval); 
+            carouselInterval = setInterval(() => { if (isCarouselPlaying) nextDrawing(); }, 9000);
+        }
+
+        // STRUCTURAL CAROUSEL WITH VISIBLE PDF EMBED PREVIEWS
+        function renderStructCarousel() {
+            try {
+                const dwgs = portfolioData.structdrawings || [];
+                if (dwgs.length === 0) { document.getElementById('struct-slide-preview-area').innerHTML = "<p class='text-white text-center'>No structural PDF drawings added yet.</p>"; return; }
+                
+                if (currentStructSlideIndex >= dwgs.length) currentStructSlideIndex = 0;
+                if (currentStructSlideIndex < 0) currentStructSlideIndex = dwgs.length - 1;
+                const item = dwgs[currentStructSlideIndex];
+
+                document.getElementById('struct-slide-sheet-badge').innerText = "Sheet: " + (item.sheetNo || 'N/A');
+                document.getElementById('struct-slide-title').innerText = item.title || 'Untitled';
+                document.getElementById('struct-slide-subtitle').innerText = `Scale ${item.scale || 'N/A'} | Date: ${item.date || 'N/A'}`;
+                
+                const isPdf = item.image && (item.image.toLowerCase().endsWith('.pdf') || item.image.startsWith('data:application/pdf'));
+                
+                const mediaHTML = isPdf 
+                    ? `<div class="w-full h-[200px] sm:h-[240px] bg-slate-950 rounded-xl border border-purple-500/50 shadow-lg cursor-pointer overflow-hidden relative group" onclick="event.stopPropagation(); openDocumentViewer('structdrawings', ${currentStructSlideIndex})">
+                        <embed src="${encodeURI(item.image)}#toolbar=0&navpanes=0&scrollbar=0" type="application/pdf" width="100%" height="100%" class="pointer-events-none opacity-90">
+                        <div class="absolute inset-0 bg-transparent group-hover:bg-purple-950/20 transition flex items-end justify-center pb-2 z-10">
+                            <span class="px-2.5 py-1 rounded bg-purple-900/90 text-purple-200 text-[10px] font-bold shadow border border-purple-500/50"><i class="fa-solid fa-expand mr-1"></i> Click to Inspect Full PDF</span>
+                        </div>
+                       </div>`
+                    : `<img src="${encodeURI(item.image || '')}" class="max-h-[200px] sm:max-h-[240px] rounded object-contain border border-slate-600 shadow-lg cursor-pointer hover:border-purple-400 transition" onclick="event.stopPropagation(); openImageLightbox('${encodeURI(item.image || '')}', '${item.title || ''}')" onError="this.parentElement.innerHTML='<div class=\\'p-6 text-center text-slate-400 bg-slate-900 border border-slate-700 w-full\\'><i class=\\'fa-solid fa-file-pdf text-3xl text-purple-400 mb-2\\'></i><p class=\\'text-[10px]\\'>No Image/PDF.</p></div>';">`;
+
+                document.getElementById('struct-slide-preview-area').innerHTML = `
+                    <div class="flex flex-col md:flex-row items-center gap-4 sm:gap-6">
+                        <div class="w-full md:w-1/2 flex justify-center">${mediaHTML}</div>
+                        <div class="w-full md:w-1/2 text-xs space-y-3">
+                            <div class="p-3 bg-slate-900/80 rounded border border-slate-700/50"><span class="text-purple-400 font-bold block mb-1 text-glow">Structural Details</span><p class="text-slate-200">${item.description || ''}</p></div>
+                            <div class="p-3 bg-slate-900/80 rounded border border-slate-700/50"><span class="text-emerald-400 font-bold block mb-1 text-glow">Rebar & Concrete Specs</span><p class="text-slate-300">${item.doors ? item.doors.join(', ') : ''}</p></div>
+                        </div>
+                    </div>`;
+                document.getElementById('struct-carousel-indicators').innerHTML = dwgs.map((_, i) => `<button onclick="goToStructSlide(${i})" class="w-2.5 h-2.5 rounded-full transition shadow-md ${i === currentStructSlideIndex ? 'bg-purple-400 w-6' : 'bg-slate-600'}"></button>`).join('');
+            } catch(e) { console.error("Error rendering struct carousel", e); }
+        }
+
+        function nextStructDrawing() { currentStructSlideIndex = (currentStructSlideIndex + 1) % (portfolioData.structdrawings?.length || 1); renderStructCarousel(); }
+        function prevStructDrawing() { currentStructSlideIndex = (currentStructSlideIndex - 1 + (portfolioData.structdrawings?.length || 1)) % (portfolioData.structdrawings?.length || 1); renderStructCarousel(); }
+        function goToStructSlide(i) { currentStructSlideIndex = i; renderStructCarousel(); }
+        function openCurrentStructSlideModal() { openDocumentViewer('structdrawings', currentStructSlideIndex); }
+
+        function toggleStructCarouselPlay() { 
+            isStructCarouselPlaying = !isStructCarouselPlaying; 
+            const btn = document.getElementById('struct-carousel-play-btn');
+            if(btn) btn.innerHTML = isStructCarouselPlaying ? '<i class="fa-solid fa-pause"></i> Pause' : '<i class="fa-solid fa-play"></i> Play'; 
+            if(isStructCarouselPlaying) startStructCarouselTimer(); 
+            else clearInterval(structCarouselInterval); 
+        }
+        function startStructCarouselTimer() { 
+            clearInterval(structCarouselInterval); 
+            structCarouselInterval = setInterval(() => { if (isStructCarouselPlaying) nextStructDrawing(); }, 9000);
+        }
+
+        function renderDrawingsGrid() {
+            try {
+                const dwgs = portfolioData.drawings || [];
+                document.getElementById('drawings-grid').innerHTML = dwgs.map((dwg, i) => `
+                    <div class="bg-slate-900/60 border border-slate-700/50 rounded-xl p-4 hover:border-sky-400 transition relative flex flex-col justify-between cursor-pointer shadow-lg group" onclick="openDocumentViewer('drawings', ${i})">
+                        ${isAdminMode ? `<div class="absolute top-2 right-2 z-20 flex gap-1" onclick="event.stopPropagation()"><button onclick="openFormModal('drawing', ${i})" class="p-1 bg-sky-600 rounded text-white"><i class="fa-solid fa-pen text-[10px]"></i></button><button onclick="deleteItem('drawing', ${i})" class="p-1 bg-rose-600 rounded text-white"><i class="fa-solid fa-trash text-[10px]"></i></button></div>` : ''}
+                        <div><span class="text-[10px] font-bold px-2 py-0.5 rounded bg-sky-950/80 text-sky-300 font-mono break-all">${dwg.sheetNo || 'N/A'}</span>
+                        <h4 class="font-bold text-sm text-white mt-2 group-hover:text-sky-300 text-glow leading-tight">${dwg.title || 'Untitled'}</h4></div>
+                    </div>`).join('');
+            } catch(e) { console.error(e); }
+        }
+
+        function renderStructDrawingsGrid() {
+            try {
+                const dwgs = portfolioData.structdrawings || [];
+                document.getElementById('struct-drawings-grid').innerHTML = dwgs.map((dwg, i) => `
+                    <div class="bg-slate-900/60 border border-slate-700/50 rounded-xl p-4 hover:border-purple-400 transition relative flex flex-col justify-between cursor-pointer shadow-lg group" onclick="openDocumentViewer('structdrawings', ${i})">
+                        ${isAdminMode ? `<div class="absolute top-2 right-2 z-20 flex gap-1" onclick="event.stopPropagation()"><button onclick="openFormModal('structdrawing', ${i})" class="p-1 bg-sky-600 rounded text-white"><i class="fa-solid fa-pen text-[10px]"></i></button><button onclick="deleteItem('structdrawing', ${i})" class="p-1 bg-rose-600 rounded text-white"><i class="fa-solid fa-trash text-[10px]"></i></button></div>` : ''}
+                        <div><span class="text-[10px] font-bold px-2 py-0.5 rounded bg-purple-950/80 text-purple-300 font-mono break-all">${dwg.sheetNo || 'N/A'}</span>
+                        <h4 class="font-bold text-sm text-white mt-2 group-hover:text-purple-300 text-glow leading-tight">${dwg.title || 'Untitled'}</h4></div>
+                    </div>`).join('');
+            } catch(e) { console.error(e); }
+        }
+
+        function renderVideos() {
+            try {
+                const vids = portfolioData.videos || [];
+                document.getElementById('videos-container').innerHTML = vids.length ? vids.map((v, i) => `
+                    <div class="glass-card p-4 sm:p-5 rounded-2xl relative">
+                        ${isAdminMode ? `<div class="absolute top-3 right-3 z-20 flex gap-1"><button onclick="openFormModal('video', ${i})" class="p-1 bg-sky-600 rounded text-white"><i class="fa-solid fa-pen text-[10px]"></i></button><button onclick="deleteItem('video', ${i})" class="p-1 bg-rose-600 rounded text-white"><i class="fa-solid fa-trash text-[10px]"></i></button></div>` : ''}
+                        <div class="bg-black/80 rounded-xl overflow-hidden mb-4 border border-slate-700/50"><video controls class="w-full max-h-[240px]"><source src="${encodeURI(v.image || '')}" type="video/mp4"></video></div>
+                        <a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(v.location || '')}" target="_blank" class="inline-block px-2.5 py-1 rounded bg-rose-950/80 hover:bg-rose-900 text-rose-300 text-[10px] font-bold uppercase border border-rose-500/50 transition"><i class="fa-solid fa-location-dot"></i> ${v.location || ''}</a>
+                        <h3 class="text-sm sm:text-base font-bold text-white mt-2 text-glow">${v.title || ''}</h3><div class="text-xs text-slate-300 mt-2">${v.description || ''}</div>
+                    </div>`).join('') : '<p class="text-xs text-slate-300">No videos yet.</p>';
+            } catch(e) { console.error(e); }
+        }
+
+        function renderDocumentSection(containerId, dataArray, type, icon, color) {
+            try {
+                const cont = document.getElementById(containerId);
+                if(!cont) return;
+                const items = dataArray || [];
+                if (!items.length) { cont.innerHTML = `<p class="text-xs text-slate-300 col-span-1 md:col-span-3">No files added.</p>`; return; }
+                
+                cont.innerHTML = items.map((doc, i) => `
+                    <div class="glass-card p-4 sm:p-5 rounded-2xl relative flex flex-col justify-between hover:border-${color}-500/50 transition">
+                        ${isAdminMode ? `<div class="absolute top-3 right-3 z-20 flex gap-1"><button onclick="openFormModal('${type}', ${i})" class="p-1 bg-sky-600 text-white rounded"><i class="fa-solid fa-pen text-[10px]"></i></button><button onclick="deleteItem('${type}', ${i})" class="p-1 bg-rose-600 text-white rounded"><i class="fa-solid fa-trash text-[10px]"></i></button></div>` : ''}
+                        <div>
+                            <div class="p-4 bg-slate-900/60 border border-slate-700/50 rounded-xl text-center mb-3 shadow-inner"><i class="${icon} text-3xl sm:text-4xl text-${color}-400 drop-shadow-md"></i></div>
+                            <h3 class="text-sm font-bold text-white text-glow leading-tight">${doc.title || ''}</h3><p class="text-[10px] sm:text-xs text-slate-300 mt-1">${doc.subtitle || ''}</p>
+                        </div>
+                        <div class="mt-4 pt-3 border-t border-slate-700/50 flex justify-between items-center text-xs">
+                            <span class="text-slate-300 text-[10px] sm:text-xs">${doc.date || ''}</span>
+                            <button onclick="openDocumentViewer('${type}s', ${i})" class="px-3 py-1.5 rounded bg-${color}-600 hover:bg-${color}-500 text-white font-bold transition flex items-center gap-1.5 shadow-md text-[10px] sm:text-xs"><i class="fa-solid fa-eye"></i> View</button>
+                        </div>
+                    </div>`).join('');
+            } catch(e) { console.error(e); }
+        }
+
+        function renderProjects() {
+            try {
+                const projects = portfolioData.projects || [];
+                document.getElementById('projects-container').innerHTML = projects.map((p, i) => `
+                    <div class="glass-card p-4 sm:p-6 rounded-2xl relative">
+                        ${isAdminMode ? `<div class="absolute top-3 right-3 z-20 flex gap-1"><button onclick="openFormModal('project', ${i})" class="p-1 bg-sky-600 rounded text-white"><i class="fa-solid fa-pen text-[10px]"></i></button><button onclick="deleteItem('project', ${i})" class="p-1 bg-rose-600 rounded text-white"><i class="fa-solid fa-trash text-[10px]"></i></button></div>` : ''}
+                        <h3 class="text-sm sm:text-base font-bold text-white text-glow leading-tight">${p.title || ''}</h3>
+                        <p class="text-[10px] sm:text-xs text-slate-300 mt-1"><a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(p.location || '')}" target="_blank" class="hover:underline text-rose-400 transition"><i class="fa-solid fa-location-dot"></i> ${p.location || ''}</a></p>
+                        <div class="text-xs text-slate-200 mt-2 leading-relaxed text-glow">${p.description || ''}</div>
+                    </div>`).join('');
+            } catch(e) { console.error(e); }
+        }
+
+        function renderExperience() {
+            try {
+                const exps = portfolioData.experiences || [];
+                document.getElementById('experience-container').innerHTML = exps.map((exp, i) => {
+                    const dynamicPeriod = getDynamicExpPeriod(exp);
+                    return `
+                        <div class="glass-card p-4 sm:p-6 rounded-2xl border-l-4 border-l-amber-500/80 relative">
+                            ${isAdminMode ? `<div class="absolute top-4 right-4 z-20 flex gap-1"><button onclick="openFormModal('experience', ${i})" class="p-1 bg-sky-600 rounded text-white"><i class="fa-solid fa-pen text-[10px]"></i></button><button onclick="deleteItem('experience', ${i})" class="p-1 bg-rose-600 rounded text-white"><i class="fa-solid fa-trash text-[10px]"></i></button></div>` : ''}
+                            <div class="flex flex-col sm:flex-row justify-between items-start gap-2 sm:gap-4 pr-10 sm:pr-14">
+                                <div>
+                                    <h3 class="text-base sm:text-lg font-bold text-white text-glow leading-tight">${exp.title || ''}</h3>
+                                    <p class="text-sky-300 text-xs sm:text-sm font-bold text-glow mt-1">${exp.company || ''}</p>
+                                    <p class="text-[10px] sm:text-xs text-slate-300 mt-1"><a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(exp.location || '')}" target="_blank" class="hover:underline text-rose-400 transition"><i class="fa-solid fa-location-dot"></i> ${exp.location || ''}</a></p>
+                                </div>
+                                <span class="shrink-0 px-2.5 py-1 rounded-full bg-slate-800/80 text-emerald-400 text-[10px] font-bold border border-emerald-500/30 whitespace-nowrap shadow-sm">${dynamicPeriod}</span>
+                            </div>
+                            <div class="text-[11px] sm:text-xs text-slate-200 mt-3 sm:mt-4 leading-relaxed text-glow break-words">${exp.description || ''}</div>
+                        </div>`;
+                }).join('');
+            } catch(e) { console.error(e); }
+        }
+
+        function openFormModal(type, index = null) {
+            try {
+                document.getElementById('form-type').value = type;
+                document.getElementById('form-index').value = index !== null ? index : '';
+                document.getElementById('pdf-extract-mode').value = 'auto';
+                
+                const datesContainer = document.getElementById('exp-dates-container');
+                const drawingSchedulesContainer = document.getElementById('drawing-schedules-container');
+                const fallbackContainer = document.getElementById('date-fallback-container');
+
+                if (type === 'experience') {
+                    if (datesContainer) datesContainer.classList.remove('hidden');
+                    if (drawingSchedulesContainer) drawingSchedulesContainer.classList.add('hidden');
+                    if (fallbackContainer) fallbackContainer.classList.add('hidden');
+                } else if (type === 'drawing' || type === 'structdrawing') {
+                    if (datesContainer) datesContainer.classList.add('hidden');
+                    if (drawingSchedulesContainer) drawingSchedulesContainer.classList.remove('hidden');
+                    if (fallbackContainer) fallbackContainer.classList.remove('hidden');
+
+                    const isStruct = type === 'structdrawing';
+                    document.getElementById('form-doors-label').innerText = isStruct ? "Rebar / Component Schedule (Comma separated)" : "Door / Component Schedule (Comma separated)";
+                    document.getElementById('form-walls-label').innerText = isStruct ? "Concrete / Element Schedule (Comma separated)" : "Wall / Material Schedule (Comma separated)";
+                } else {
+                    if (datesContainer) datesContainer.classList.add('hidden');
+                    if (drawingSchedulesContainer) drawingSchedulesContainer.classList.add('hidden');
+                    if (fallbackContainer) fallbackContainer.classList.remove('hidden');
+                }
+
+                if (index !== null) {
+                    const collectionKey = type.endsWith('drawing') ? type + 's' : type + 's';
+                    const itemArray = portfolioData[collectionKey] || portfolioData[type + 's'] || [];
+                    const item = itemArray[index] || {};
+                    document.getElementById('form-title').value = item.title || item.sheetNo || '';
+                    document.getElementById('form-subtitle').value = item.company || item.location || item.subtitle || '';
+                    document.getElementById('form-date').value = item.period || item.scale || item.file || item.date || '';
+                    document.getElementById('form-description').value = item.description || '';
+                    document.getElementById('form-image').value = item.image || item.file || '';
+
+                    if (type === 'drawing' || type === 'structdrawing') {
+                        document.getElementById('form-doors-schedule').value = item.doors ? item.doors.join(', ') : '';
+                        document.getElementById('form-walls-schedule').value = item.walls ? item.walls.join(', ') : '';
+                    }
+
+                    if (type === 'experience') {
+                        document.getElementById('form-start-date').value = item.startDate || '';
+                        document.getElementById('form-end-date').value = item.endDate && item.endDate !== 'present' ? item.endDate : '';
+                        document.getElementById('form-is-current').checked = !!item.isCurrent || item.endDate === 'present';
+                        toggleCurrentJobDates(!!item.isCurrent || item.endDate === 'present');
+                    }
+                } else { 
+                    document.getElementById('dynamic-form').reset(); 
+                }
+                document.getElementById('formModal').classList.remove('hidden');
+            } catch(e) { console.error(e); }
+        }
+
+        function closeFormModal() { document.getElementById('formModal').classList.add('hidden'); }
+
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            const t = document.getElementById('form-type').value;
+            const i = document.getElementById('form-index').value;
+            const ttl = document.getElementById('form-title').value;
+            const sub = document.getElementById('form-subtitle').value;
+            const dat = document.getElementById('form-date').value;
+            const des = document.getElementById('form-description').value;
+            const img = document.getElementById('form-image').value;
+
+            let n = {};
+            if (t === 'project' || t === 'video') {
+                n = { title: ttl, location: sub, period: dat, description: des, image: img };
+            } else if (t === 'experience') {
+                const sDate = document.getElementById('form-start-date').value;
+                const eDate = document.getElementById('form-end-date').value;
+                const isCurrent = document.getElementById('form-is-current').checked;
+                n = { title: ttl, company: sub, location: dat, startDate: sDate, endDate: isCurrent ? 'present' : eDate, isCurrent: isCurrent, period: dat, description: des };
+            } else if (t === 'drawing' || t === 'structdrawing') {
+                const doorInput = document.getElementById('form-doors-schedule').value;
+                const wallInput = document.getElementById('form-walls-schedule').value;
+                const doorsArray = doorInput ? doorInput.split(',').map(s => s.trim()).filter(Boolean) : [];
+                const wallsArray = wallInput ? wallInput.split(',').map(s => s.trim()).filter(Boolean) : [];
+
+                n = { sheetNo: ttl, title: sub, scale: dat, date: "2026", description: des, image: img, doors: doorsArray, walls: wallsArray };
+            } else if (['workpdf','doc','certificate','degree','cv'].includes(t)) {
+                n = { title: ttl, subtitle: sub, date: dat, description: des, file: img };
+            }
+
+            const targetKey = t + 's';
+            if (!portfolioData[targetKey]) portfolioData[targetKey] = [];
+            
+            if (i !== '') { 
+                portfolioData[targetKey][parseInt(i)] = n; 
+                showToast("Updated Successfully!"); 
+            } else { 
+                portfolioData[targetKey].push(n); 
+                showToast("Added Successfully!"); 
+            }
+            
+            savePortfolioData(); 
+            closeFormModal();
+        }
+
+        function deleteItem(type, idx) { 
+            if (confirm("Are you sure you want to delete this item?")) { 
+                try {
+                    portfolioData[type + 's'].splice(idx, 1); 
+                    savePortfolioData(); 
+                    showToast("Item Deleted."); 
+                } catch(e) { console.error(e); }
+            } 
+        }
+
+        function exportJSON() { 
+            try {
+                const a = document.createElement('a'); 
+                a.href = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(portfolioData, null, 4)); 
+                a.download = "rasiq_backup.json"; 
+                a.click(); 
+                showToast("Backup Downloaded!"); 
+            } catch(e) { alert("Download failed"); }
+        }
+        
+        function importJSON(e) { 
+            const r = new FileReader(); 
+            r.onload = x => { 
+                try { 
+                    portfolioData = JSON.parse(x.target.result); 
+                    savePortfolioData(); 
+                    showToast("Restored!"); 
+                } catch(err) { 
+                    alert("Format Error."); 
+                } 
+            }; 
+            if(e.target.files && e.target.files[0]) {
+                r.readAsText(e.target.files[0]); 
+            }
+        }
+
+        function openTab(tabName) {
+            document.querySelectorAll('.tab-content').forEach(el => {
+                el.classList.add('hidden');
+                el.classList.remove('mac-window-animate');
+            });
+            document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+            
+            const c = document.getElementById('content-' + tabName);
+            const t = document.getElementById('tab-' + tabName);
+            
+            if (c) {
+                c.classList.remove('hidden');
+                void c.offsetWidth;
+                c.classList.add('mac-window-animate');
+            }
+            if (t) t.classList.add('active');
+
+            if(isMobileMenuOpen) toggleMobileMenu();
+
+            if (tabName === 'home') { setupSeasonalVideo(); }
+        }
+
+        function renderAll() {
+            try {
+                renderCarousel(); renderStructCarousel(); renderDrawingsGrid(); renderStructDrawingsGrid(); renderProjects(); renderExperience(); renderVideos();
+                renderDocumentSection('workpdfs-container', portfolioData.workpdfs, 'workpdf', 'fa-solid fa-folder-tree', 'amber');
+                renderDocumentSection('docs-container', portfolioData.docs, 'doc', 'fa-solid fa-book-open-reader', 'orange');
+                renderDocumentSection('certificates-container', portfolioData.certificates, 'certificate', 'fa-solid fa-certificate', 'emerald');
+                renderDocumentSection('degrees-container', portfolioData.degrees, 'degree', 'fa-solid fa-user-graduate', 'pink');
+                renderDocumentSection('cvs-container', portfolioData.cvs, 'cv', 'fa-solid fa-file-invoice', 'teal');
+            } catch(e) { console.error("Critical rendering error", e); }
+        }
+
+        window.addEventListener('DOMContentLoaded', () => { 
+            loadPortfolioData(); 
+            renderAll(); 
+            startCarouselTimer(); 
+            startStructCarouselTimer();
+            updateLiveClock(); 
+            setupSeasonalVideo(); 
+        });
+    </script>
+</body>
+</html>
